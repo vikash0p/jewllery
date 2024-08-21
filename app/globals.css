@@ -29,6 +29,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+     --swiper-theme-color: #edb474 !important;
   }
 
   .dark {
@@ -66,4 +67,29 @@
   body {
     @apply bg-background text-foreground;
   }
+  .one{
+    color: #000000;
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 80px;
+  aspect-ratio: 1.154;
+  background: repeating-conic-gradient(from -30deg,#027B7F 0 60deg,#FFA588 0 120deg,#BF1E62 0 180deg);
+  animation: l13 1.5s infinite alternate;
+}
+@keyframes l13 {
+  0%,
+  10%  {clip-path: polygon(50% 50%,25% 100%,25% 100%,25% 100%,25% 100%,75% 100%,75% 100%,75% 100%)}
+  33%,
+  43%  {clip-path: polygon(50% 50%,0   50% ,0   50% ,0   50% ,25% 100%,75% 100%,100% 50%,100% 50%)}
+  66%,
+  76%  {clip-path: polygon(50% 50%,25% 0   ,25% 0   ,0   50% ,25% 100%,75% 100%,100% 50%,75%  0  )}
+  95%,
+  100% {clip-path: polygon(50% 50%,75% 0   ,25% 0   ,0   50% ,25% 100%,75% 100%,100% 50%,75%  0  )}
+}
+
+.swiper-button-prev, .swiper-button-next{
+  color: #edb474 !important;
 }
