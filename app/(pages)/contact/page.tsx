@@ -46,7 +46,7 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form Submitted:", state);
+    // console.log("Form Submitted:", state);
     dispatch({ type: "RESET_FORM" });
   };
 
@@ -118,7 +118,7 @@ const ContactPage: React.FC = () => {
 
         {/* Company Info */}
         <div>
-         
+
           <SubHeading sub="Contact Information" />
           <div className="space-y-4">
             <div className="flex items-center">

@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 const BlogCard = ({ value }: { value: BlogPost }) => {
   const router = useRouter();
     const pathname = usePathname();
-    console.log("🚀 ~ file: BlogCard.tsx:12 ~ pathname:", pathname);
+    // console.log("🚀 ~ file: BlogCard.tsx:12 ~ pathname:", pathname);
 
     const Links=pathname === '/blog' || '/' ? (`/blog/${value.blogId}`) :  (`${value.blogId}`)
   return (
