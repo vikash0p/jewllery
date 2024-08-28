@@ -109,7 +109,7 @@ export const testimonialsData: TestimonialData[] = [
 
 export const blogPosts: BlogPost[] = [
   {
-    id: 1,
+    blogId: "ZjwI7B9SqWOzz",
     title: "The Evolution of Engagement Rings: A Historical Perspective",
     author: "Emily Thompson",
     date: "2024-01-10",
@@ -122,7 +122,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/01268e81-e11c-46c0-acd2-f5f582378d60",
   },
   {
-    id: 2,
+    blogId: "PS5Q0wP9",
     title: "Top 10 Jewelry Trends for 2024: Tips and Tricks",
     author: "Sophia Martinez",
     date: "2024-02-05",
@@ -135,7 +135,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/4b6637f0-f2b5-4398-a4c1-0d9555774646",
   },
   {
-    id: 3,
+    blogId: "AK2Tpn9O",
     title: "How to Choose the Perfect Diamond: A Comprehensive Guide",
     author: "Michael Johnson",
     date: "2024-03-12",
@@ -148,7 +148,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/179b891e-4ba8-49bc-b6ce-90c5a834af6b",
   },
   {
-    id: 4,
+    blogId: "d9l9zaa8svc0Uol",
     title: "The Art of Custom Jewelry Design",
     author: "Olivia Davis",
     date: "2024-04-08",
@@ -161,7 +161,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/d5b35b16-70f4-4f08-9b63-21ac68bf1e07",
   },
   {
-    id: 5,
+    blogId: "CZAkXF",
     title: "Sustainable Jewelry: What You Need to Know",
     author: "David Brown",
     date: "2024-05-15",
@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/19e61c82-5d96-4c96-9876-87f4ed97910f",
   },
   {
-    id: 6,
+    blogId: "GMjnbZXIpa",
     title: "The Symbolism of Gemstones: What Your Jewelry Says About You",
     author: "Isabella Clark",
     date: "2024-06-20",
@@ -187,7 +187,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/1c55eefd-5311-497c-a709-ee8a05c26545",
   },
   {
-    id: 7,
+    blogId: "RCUOXN",
     title: "A Guide to Vintage Jewelry: Styles, Eras, and Tips",
     author: "William Anderson",
     date: "2024-07-05",
@@ -200,7 +200,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/2b334a3f-6487-438e-9e6e-f95c9eae962a",
   },
   {
-    id: 8,
+    blogId: "CXUNPPUKBgwCdRA",
     title: "Jewelry Care 101: How to Keep Your Pieces Looking New",
     author: "Emily Thompson",
     date: "2024-08-01",
@@ -213,7 +213,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/2bf6c39f-d75a-41c7-8dcc-370183312cfc",
   },
   {
-    id: 9,
+    blogId: "HTM4h3D0MAjnc5JTrS",
     title: "The Influence of Celebrities on Jewelry Fashion",
     author: "Sophia Martinez",
     date: "2024-08-15",
@@ -226,7 +226,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/0b23ac73-97c7-478b-bf6f-449ce54549fb",
   },
   {
-    id: 10,
+    blogId: "QpqLbqLA0",
     title: "The Science Behind Diamond Cutting: How It Affects Sparkle",
     author: "Michael Johnson",
     date: "2024-09-10",
@@ -239,7 +239,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/1770ab8d-8d9a-49b4-a9c9-4ea564c44c5f",
   },
   {
-    id: 11,
+    blogId: "8ygkFqo0",
     title: "Pearls: A Timeless Classic in Modern Jewelry",
     author: "Olivia Davis",
     date: "2024-09-25",
@@ -252,7 +252,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/2191b752-4015-4919-ac3e-3ebc1623dba9",
   },
   {
-    id: 12,
+    blogId: "8Zku9O1hvB6ME0Wm",
     title: "Ethical Sourcing in the Jewelry Industry: What You Should Know",
     author: "David Brown",
     date: "2024-10-05",
@@ -265,7 +265,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/34d438bf-86ee-4b1d-8341-407ef6b23b7a",
   },
   {
-    id: 13,
+    blogId: "pCXPWlo3bayK7rrK",
     title:
       "The Magic of Colored Gemstones: Adding a Pop of Color to Your Collection",
     author: "Isabella Clark",
@@ -279,7 +279,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/e758d1d9-6e24-4cfd-947f-a37e43abc628",
   },
   {
-    id: 14,
+    blogId: "o6bl0FGv0xi8",
     title: "The Role of Technology in Modern Jewelry Design",
     author: "William Anderson",
     date: "2024-11-02",
@@ -292,7 +292,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/55e0c449-a115-46b0-9e9e-4e7876e198bf",
   },
   {
-    id: 15,
+    blogId: "Kj2fGqL3Cfi",
     title: "How to Style Layered Necklaces: Tips and Tricks",
     author: "Emily Thompson",
     date: "2024-11-20",
@@ -305,7 +305,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/0328eb65-89f8-4def-9860-4b8341535ce3",
   },
   {
-    id: 16,
+    blogId: "qvHAB9Z",
     title: "The Impact of Jewelry on Self-Expression",
     author: "Sophia Martinez",
     date: "2024-12-05",
@@ -318,7 +318,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/44328208-0bcb-4d5b-89c6-a04d551369e8",
   },
   {
-    id: 17,
+    blogId: "HQqSp08",
     title: "The Most Iconic Jewelry Pieces in Pop Culture",
     author: "Michael Johnson",
     date: "2024-12-20",
@@ -331,7 +331,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/5e2acd82-7b75-4669-be63-4cfa9bafd002",
   },
   {
-    id: 18,
+    blogId: "y6XOin2pai30PJPHfV0Y",
     title: "The Rise of Minimalist Jewelry: Less is More",
     author: "Olivia Davis",
     date: "2025-01-05",
@@ -344,7 +344,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/439e437d-4bdc-4825-9eb9-5c5c12ea0cb7",
   },
   {
-    id: 19,
+    blogId: "ukigD",
     title: "How to Choose the Right Jewelry for Your Face Shape",
     author: "David Brown",
     date: "2025-01-20",
@@ -357,7 +357,7 @@ export const blogPosts: BlogPost[] = [
       "https://image.lexica.art/full_webp/67d81001-9e75-4228-bba5-387f101bc390",
   },
   {
-    id: 20,
+    blogId: "hNsWYHNKrZdzMkGPqY7",
     title: "The Legacy of Family Heirloom Jewelry",
     author: "Isabella Clark",
     date: "2025-02-05",

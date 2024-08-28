@@ -1,11 +1,12 @@
-import React from 'react'
+import BlogData from "@/components/BlogComponents/BlogData";
+import React from "react";
 
-const page = () => {
+const Blog = () => {
   return (
     <div>
-      blog
+      <BlogData />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Blog;

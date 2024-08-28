@@ -30,7 +30,7 @@ export interface Features {
 }
 
 export type BlogPost = {
-  id: number;
+  blogId: string;
   title: string;
   author: string;
   date: string;
