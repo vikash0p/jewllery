@@ -32,7 +32,7 @@ export default function HomeSlider() {
               </p>
               <button
                 type="button"
-                className="text-xl bg-orange-300 px-6 py-2 rounded-sm hover:bg-orange-300 transition-colors"
+                className="text-xl bg-myColorOne px-6 py-2 rounded-sm hover:bg-myColorHoverOne transition-colors"
               >
                 SHOP NOW
               </button>

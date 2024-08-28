@@ -5,15 +5,16 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-
+import { Search, UserRound, ShoppingCart } from "lucide-react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
    const pathname = usePathname();
 
   const links = [
     { name: "Home", path: "/" },
+    { name: "Collection", path: "/collection" },
     { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
+    { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -65,14 +66,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="text-3xl font-bold font-serif">
-            <Image
-              src="https://www.svgrepo.com/show/452102/slack.svg"
-              alt="AI Logo"
-              width={44}
-              height={44}
-              className="w-12"
-            />
+          <Link href="/" className="text-3xl font-bold ">
+           Elegant Gems
           </Link>
 
           {/* Links for larger screens */}
@@ -81,11 +76,29 @@ const Navbar = () => {
               <Link
                 key={index}
                 href={link.path}
-                className={`hover:bg-orange-300 px-3 py-2 rounded-md text-lg font-medium ${pathname === link.path ? "bg-orange-300":""}`}
+                className={`hover:bg-myColorHoverOne px-5 py-2  uppercase ${
+                  pathname === link.path ? "bg-myColorOne" : ""
+                }`}
               >
                 {link.name}
               </Link>
             ))}
+          </div>
+          <div className="flex flex-row gap-4">
+            <div className="">
+              <Search size={25} />{" "}
+            </div>
+            <div className="">
+              <UserRound size={25} />
+            </div>
+            <div className="">
+              <a href="/cart" className="relative flex items-center">
+                <ShoppingCart size={25} />
+                <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-myColorHoverOne text-white text-xs font-bold flex items-center justify-center">
+                  3
+                </span>
+              </a>
+            </div>
           </div>
 
           {/* Hamburger Menu for Mobile */}

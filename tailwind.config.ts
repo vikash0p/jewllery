@@ -20,7 +20,9 @@ const config = {
     extend: {
       colors: {
         myColor: "white",
+        myColorOne: "#fb923c",
         myColorHover: "gray",
+        myColorHoverOne: "#ea580c",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

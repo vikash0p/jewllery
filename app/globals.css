@@ -91,5 +91,13 @@
 }
 
 .swiper-button-prev, .swiper-button-next{
-  color: #edb474 !important;
+  color: #ea580c !important;
+}
+
+.discountMiddlePageBackgroundImage{
+  background-image: url(../public/main-banner-1_1903x750.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
