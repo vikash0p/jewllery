@@ -11,6 +11,7 @@ const BreadcumbHeading = ({heading,subHeading}:{heading:string,subHeading:string
         className="object-cover w-full h-full"
         fill
         priority
+        sizes="100vw"
       />
       <div className="absolute flex flex-col items-center justify-center w-full h-full gap-4 ">
         <h5 className="text-3xl ">{heading} </h5>

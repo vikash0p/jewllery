@@ -13,13 +13,13 @@ const Footer = () => {
                 <div>
                   <a href="/">
                     <div className="flex items-center space-x-2 text-2xl font-medium">
-                      <span>
+                      <span className="relative w-16 h-16">
                         <Image
-                          src="/logo.png" // Replace with your jewelry logo
+                          src="/logo.png"
                           alt="Jewelry Logo"
-                          width={64}
-                          height={64}
-                          className="w-16 rounded-full"
+                          fill
+                          className="w-full h-full rounded-full"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </span>
                       <span className="">Elegant Gems</span>{" "}

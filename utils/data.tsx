@@ -3,7 +3,7 @@ import { FaShippingFast, FaHeadset, FaMoneyBillWave } from "react-icons/fa";
 import { FaPaintBrush, FaShieldAlt,  } from "react-icons/fa";
 import { TestimonialData } from "./interface";
 import { Features } from "./interface";
-import { BlogPost,brandDataInterface,Feature, Section } from "./interface";
+import { BlogPost,brandDataInterface,Feature, Section, BlogLink } from "./interface";
 
 export const features: Features[] = [
   {
@@ -438,5 +438,22 @@ export const brandData: brandDataInterface[] = [
     description:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.",
     imageUrl: "/about-us-banner2-3.jpg", // Replace with an actual image URL
+  },
+];
+
+
+
+export const blogLinks: BlogLink[] = [
+  { id: "CZAkXF", title: "Sustainable Jewelry", url: "/blog/CZAkXF" },
+  { id: "GMjnbZXIpa", title: "The Gemstones", url: "/blog/GMjnbZXIpa" },
+  {
+    id: "ZjwI7B9SqWOzz",
+    title: "Engagement Rings",
+    url: "/blog/ZjwI7B9SqWOzz",
+  },
+  {
+    id: "d9l9zaa8svc0Uol",
+    title: "The Art of Jewelry",
+    url: "/blog/d9l9zaa8svc0Uol",
   },
 ];

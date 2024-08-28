@@ -10,7 +10,7 @@ const DiscouontPage = () => {
           src={"/sub-banner-1.jpg"}
           alt="bannerImage"
           fill
-          sizes=""
+          sizes="(min-width: 1360px) 632px, (min-width: 780px) calc(44.64vw + 34px), 100vw"
           className="w-full h-full object-cover"
           priority
         />
@@ -32,7 +32,7 @@ const DiscouontPage = () => {
           src={"/sub-banner-2.jpg"}
           alt="bannerImage"
           fill
-          sizes=""
+          sizes="(min-width: 1360px) 632px, (min-width: 780px) calc(44.64vw + 34px), 100vw"
           className="w-full h-full object-cover"
           priority
         />

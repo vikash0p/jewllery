@@ -67,6 +67,7 @@ const FilterByCategory = () => {
                         width={100}
                         height={100}
                         priority
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover w-36 h-36 rounded-full cursor-pointer"
                       />
                     </Link>
@@ -77,14 +78,12 @@ const FilterByCategory = () => {
           </div>
         )}
         <div className="max-w-7xl m-auto flex flex-wrap gap-8 justify-between mt-4">
-          {
-            productsByCategory &&
+          {productsByCategory &&
             Object.entries(productsByCategory).map(([category, count]) => (
               <div key={category} className="text-center px-7">
                 {count} products
               </div>
-            ))
-          }
+            ))}
         </div>
       </div>
     </div>

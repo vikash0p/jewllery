@@ -15,6 +15,7 @@ const ProductCard = ({value}:{value:JewelleryItem}) => {
           alt="Ruby Eternity Band"
           fill
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="p-6">
@@ -23,7 +24,7 @@ const ProductCard = ({value}:{value:JewelleryItem}) => {
           {value.description.slice(0, 50)}...
         </p>
         <div className="mt-4 flex items-center justify-between">
-          <div className='space-x-4'>
+          <div className="space-x-4">
             <span className=" text-gray-700 font-bold  ">
               ${discountedPrice.toFixed(2)}{" "}
             </span>

@@ -23,7 +23,7 @@ export default function SwiperTestimonialHome() {
         pagination={true}
         mousewheel={true}
         keyboard={true}
-    
+
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper  "
       >
@@ -33,12 +33,12 @@ export default function SwiperTestimonialHome() {
                     <SwiperSlide key={value.id} className="w-full px-12" >
                          <div className="space-y-5">
                             <div>
-                                 <h2 className="text-2xl font-semibold" >{value.testimonial} </h2>
+                                 <h2 className=" lg:text-2xl font-semibold" >{value.testimonial} </h2>
                           <Review star={5} />
                             </div>
 
                           <div>
-                            <p className="text-xl font-bold text-orange-600">{value.name} </p>
+                            <p className="lg:text-xl font-bold text-orange-600">{value.name} </p>
                             <p>{value.profession} </p>
                             <p>{value.location} </p>
                           </div>

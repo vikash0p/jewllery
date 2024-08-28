@@ -30,6 +30,7 @@ const AboutComponetData = () => {
               className="object-cover w-full h-full"
               fill
               priority
+              sizes="(min-width: 1320px) 1152px, (min-width: 780px) 90vw, calc(100vw - 48px)"
             />
           </div>
           <h4 className="text-center text-3xl font-semibold md:w-3/4  m-auto ">
@@ -52,6 +53,7 @@ const AboutComponetData = () => {
               className="object-contain w-full h-full"
               fill
               priority
+              sizes="224px"
             />
           </div>
         </div>
@@ -66,6 +68,7 @@ const AboutComponetData = () => {
               width={600}
               height={400}
               className="max-w-sm md:max-w-md:  object-cover rounded-lg shadow-lg"
+              sizes="384px"
             />
           </div>
           <div className="md:w-1/2 md:pl-8">
@@ -144,6 +147,7 @@ const AboutComponetData = () => {
                 width={400}
                 height={300}
                 className="rounded-lg mb-4"
+                sizes="(min-width: 1480px) 349px, (min-width: 1040px) calc(28.57vw - 68px), (min-width: 780px) calc(50vw - 128px), (min-width: 540px) 400px, calc(96.36vw - 101px)"
               />
               <h3 className="text-2xl font-semibold text-gray-900 mb-2">
                 {section.title}

@@ -55,3 +55,10 @@ export interface Feature {
   description: string;
   imageUrl: string;
 }
+
+
+export interface BlogLink {
+  id: string;
+  title: string;
+  url: string;
+}

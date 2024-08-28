@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images:{
-        domains: ['image.lexica.art']
-    }
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'image.lexica.art',
+                port: '',
+            },
+        ],
+    },
 };
 
 export default nextConfig;
+
