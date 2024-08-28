@@ -60,7 +60,7 @@ const FilterByCategory = () => {
               Object.entries(firstProductInEachCategory).map(
                 ([category, product]) => (
                   <div key={product._id} className="text-center">
-                    <Link href={`/collection/${product.category}`}>
+                    <Link href={`/collection/category/${product.category}`}>
                       <Image
                         src={product.imageUrl}
                         alt={product.name}
