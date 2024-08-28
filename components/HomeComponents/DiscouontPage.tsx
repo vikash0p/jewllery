@@ -4,14 +4,14 @@ import React from "react";
 
 const DiscouontPage = () => {
   return (
-    <div className="max-w-7xl m-auto grid grid-cols-1 md:grid-cols-2 gap-4 py-16">
+    <div className="grid grid-cols-1 gap-4 py-16 m-auto max-w-7xl md:grid-cols-2">
       <div className="relative  h-[250px] ">
         <Image
           src={"/sub-banner-1.jpg"}
           alt="bannerImage"
           fill
           sizes="(min-width: 1360px) 632px, (min-width: 780px) calc(44.64vw + 34px), 100vw"
-          className="w-full h-full object-cover"
+          className="object-cover w-full h-full"
           priority
         />
         <div className="absolute left-[55%] top-[20%] space-y-2 ">
@@ -20,7 +20,7 @@ const DiscouontPage = () => {
 
           <button
             type="button"
-            className="text-sm bg-orange-300 px-6 py-2 rounded-sm hover:bg-orange-500 transition-colors"
+            className="px-6 py-2 text-sm transition-colors bg-orange-300 rounded-sm hover:bg-orange-500"
           >
             SHOP NOW
           </button>
@@ -33,7 +33,7 @@ const DiscouontPage = () => {
           alt="bannerImage"
           fill
           sizes="(min-width: 1360px) 632px, (min-width: 780px) calc(44.64vw + 34px), 100vw"
-          className="w-full h-full object-cover"
+          className="object-cover w-full h-full"
           priority
         />
         <div className="absolute left-[55%] top-[20%] space-y-2 ">
@@ -42,7 +42,7 @@ const DiscouontPage = () => {
 
           <button
             type="button"
-            className="text-sm bg-orange-300 px-6 py-2 rounded-sm hover:bg-orange-500 transition-colors"
+            className="px-6 py-2 text-sm transition-colors bg-orange-300 rounded-sm hover:bg-orange-500"
           >
             SHOP NOW
           </button>

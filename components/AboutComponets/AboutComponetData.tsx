@@ -19,9 +19,9 @@ import SwiperTestimonialHome from "../HomeComponents/SwiperTestimonialHome";
 
 const AboutComponetData = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <BreadcumbHeading heading="About Us" subHeading="Home / About Us" />
-      <div className="container mx-auto p-6 md:p-12">
+      <div className="container p-6 mx-auto md:p-12">
         <div className="space-y-6">
           <div className="relative max-w-6xl h-80 md:h-96 lg:h-[500px] m-auto ">
             <Image
@@ -33,11 +33,11 @@ const AboutComponetData = () => {
               sizes="(min-width: 1320px) 1152px, (min-width: 780px) 90vw, calc(100vw - 48px)"
             />
           </div>
-          <h4 className="text-center text-3xl font-semibold md:w-3/4  m-auto ">
+          <h4 className="m-auto text-3xl font-semibold text-center md:w-3/4 ">
             We are a digital agency focused on delivering content and utility
             user-experiences.
           </h4>
-          <p className="text-sm  md:w-3/4 text-gray-600 m-auto">
+          <p className="m-auto text-sm text-gray-600 md:w-3/4">
             Adipiscing lacus ut elementum, nec duis, tempor litora turpis
             dapibus. Imperdiet cursus odio tortor in elementum. Egestas nunc
             eleifend feugiat lectus laoreet, vel nunc taciti integer cras. Hac
@@ -60,19 +60,19 @@ const AboutComponetData = () => {
 
         {/* Brand Story Section */}
         <SubHeading sub="Our Story" />
-        <section className="flex flex-col md:flex-row items-center mb-12 max-w-5xl m-auto py-8">
-          <div className="md:w-1/2 mb-6 md:mb-0">
+        <section className="flex flex-col items-center max-w-5xl py-8 m-auto mb-12 md:flex-row">
+          <div className="mb-6 md:w-1/2 md:mb-0">
             <Image
               src="https://image.lexica.art/full_webp/6c4b1af0-3c5e-4ebb-8b9d-09e0de81e5be"
               alt="Jewelry Story"
               width={600}
               height={400}
-              className="max-w-sm md:max-w-md:  object-cover rounded-lg shadow-lg"
+              className="object-cover max-w-sm rounded-lg shadow-lg md:max-w-md:"
               sizes="384px"
             />
           </div>
           <div className="md:w-1/2 md:pl-8">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+            <h2 className="mb-4 text-3xl font-semibold text-gray-900">
               Our Story
             </h2>
             <p className="text-gray-700">
@@ -85,14 +85,14 @@ const AboutComponetData = () => {
           </div>
         </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8 ">
+        <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-2 lg:grid-cols-3 ">
           {featuresData.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col items-center bg-white p-8 rounded-lg shadow-lg  "
+              className="flex flex-col items-center p-8 bg-white rounded-lg shadow-lg "
             >
-              <feature.icon className="text-6xl text-gray-700 mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+              <feature.icon className="mb-4 text-6xl text-gray-700" />
+              <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                 {feature.title}
               </h3>
               <p className="text-gray-600">{feature.description}</p>
@@ -102,10 +102,10 @@ const AboutComponetData = () => {
         {/*  */}
 
         {/* Key Features Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-            <FaGem className="text-5xl text-gray-700 mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+        <section className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-col items-center p-6 transition-shadow duration-300 bg-white rounded-lg shadow-md hover:shadow-xl">
+            <FaGem className="mb-4 text-5xl text-gray-700" />
+            <h3 className="mb-2 text-xl font-semibold text-gray-900">
               Exceptional Quality
             </h3>
             <p className="text-gray-600">
@@ -113,9 +113,9 @@ const AboutComponetData = () => {
               ensuring durability and timeless beauty.
             </p>
           </div>
-          <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-            <FaCrown className="text-5xl text-gray-700 mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+          <div className="flex flex-col items-center p-6 transition-shadow duration-300 bg-white rounded-lg shadow-md hover:shadow-xl">
+            <FaCrown className="mb-4 text-5xl text-gray-700" />
+            <h3 className="mb-2 text-xl font-semibold text-gray-900">
               Elegant Designs
             </h3>
             <p className="text-gray-600">
@@ -123,9 +123,9 @@ const AboutComponetData = () => {
               piece a unique statement of elegance.
             </p>
           </div>
-          <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-            <FaHeart className="text-5xl text-gray-700 mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+          <div className="flex flex-col items-center p-6 transition-shadow duration-300 bg-white rounded-lg shadow-md hover:shadow-xl">
+            <FaHeart className="mb-4 text-5xl text-gray-700" />
+            <h3 className="mb-2 text-xl font-semibold text-gray-900">
               Passionate Craftsmanship
             </h3>
             <p className="text-gray-600">
@@ -135,21 +135,21 @@ const AboutComponetData = () => {
           </div>
         </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-8 py-14 ">
+        <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 py-14 ">
           {sections.map((section, index) => (
             <div
               key={index}
-              className="max-w-lg bg-white p-8 rounded-lg shadow-lg"
+              className="max-w-lg p-8 bg-white rounded-lg shadow-lg"
             >
               <Image
                 src={section.imageUrl}
                 alt={section.title}
                 width={400}
                 height={300}
-                className="rounded-lg mb-4"
+                className="mb-4 rounded-lg"
                 sizes="(min-width: 1480px) 349px, (min-width: 1040px) calc(28.57vw - 68px), (min-width: 780px) calc(50vw - 128px), (min-width: 540px) 400px, calc(96.36vw - 101px)"
               />
-              <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+              <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                 {section.title}
               </h3>
               <p className="text-gray-600">{section.description}</p>
@@ -157,13 +157,13 @@ const AboutComponetData = () => {
           ))}
         </div>
         {/* Awards and Recognition Section */}
-        <section className="text-center mb-12">
+        <section className="mb-12 text-center">
           <SubHeading sub="Awards & Recognition" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 py-8">
+          <div className="grid grid-cols-1 gap-3 py-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {/* Award 1 */}
-            <div className="flex flex-col items-center bg-white p-8 rounded-lg shadow-lg max-w-xs transform transition duration-500 hover:scale-105">
-              <FaTrophy className="text-6xl text-yellow-500 mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+            <div className="flex flex-col items-center max-w-xs p-8 transition duration-500 transform bg-white rounded-lg shadow-lg hover:scale-105">
+              <FaTrophy className="mb-4 text-6xl text-yellow-500" />
+              <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                 Best Jewelry Design 2024
               </h3>
               <p className="text-gray-600">
@@ -172,9 +172,9 @@ const AboutComponetData = () => {
               </p>
             </div>
             {/* Award 2 */}
-            <div className="flex flex-col items-center bg-white p-8 rounded-lg shadow-lg max-w-xs transform transition duration-500 hover:scale-105">
-              <FaHandsHelping className="text-6xl text-green-500 mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+            <div className="flex flex-col items-center max-w-xs p-8 transition duration-500 transform bg-white rounded-lg shadow-lg hover:scale-105">
+              <FaHandsHelping className="mb-4 text-6xl text-green-500" />
+              <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                 Outstanding Customer Service
               </h3>
               <p className="text-gray-600">
@@ -183,9 +183,9 @@ const AboutComponetData = () => {
               </p>
             </div>
             {/* Award 3 */}
-            <div className="flex flex-col items-center bg-white p-8 rounded-lg shadow-lg max-w-xs transform transition duration-500 hover:scale-105">
-              <FaStar className="text-6xl text-gray-700 mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+            <div className="flex flex-col items-center max-w-xs p-8 transition duration-500 transform bg-white rounded-lg shadow-lg hover:scale-105">
+              <FaStar className="mb-4 text-6xl text-gray-700" />
+              <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                 Excellence in Craftsmanship
               </h3>
               <p className="text-gray-600">
@@ -194,9 +194,9 @@ const AboutComponetData = () => {
               </p>
             </div>
             {/* Award 4 */}
-            <div className="flex flex-col items-center bg-white p-8 rounded-lg shadow-lg max-w-xs transform transition duration-500 hover:scale-105">
-              <FaGem className="text-6xl text-purple-500 mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+            <div className="flex flex-col items-center max-w-xs p-8 transition duration-500 transform bg-white rounded-lg shadow-lg hover:scale-105">
+              <FaGem className="mb-4 text-6xl text-purple-500" />
+              <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                 Premium Quality Materials
               </h3>
               <p className="text-gray-600">
@@ -206,7 +206,7 @@ const AboutComponetData = () => {
             </div>
           </div>
         </section>
-        <div className="container mr-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-10 ">
+        <div className="container grid grid-cols-1 gap-10 py-10 mr-auto lg:grid-cols-2 ">
           <div className="space-y-10">
             <SubHeading sub="Why You Choose Us ?" />
             <AboutAccordion />
@@ -217,11 +217,11 @@ const AboutComponetData = () => {
           </div>
         </div>
         {/* Contact Section */}
-        <section className="text-center mb-12">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+        <section className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-semibold text-gray-900">
             Get in Touch
           </h2>
-          <p className="text-gray-700 mb-4">
+          <p className="mb-4 text-gray-700">
             We’d love to hear from you. For inquiries or more information about
             our collections,{" "}
             <a href="/contact" className="text-blue-700 hover:underline">

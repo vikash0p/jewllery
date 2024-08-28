@@ -7,8 +7,8 @@ const BlogLinksComponent = () => {
 
 
   return (
-    <div className="bg-gray-100 p-4">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">Recent Posts</h2>
+    <div className="p-4 bg-gray-100">
+      <h2 className="mb-4 text-xl font-bold text-gray-800">Recent Posts</h2>
       <ul className="list-none">
         {blogLinks.map((link) => (
           <li key={link.id} className="mb-2">

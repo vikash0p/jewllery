@@ -6,12 +6,12 @@ import { BlogPost } from '@/utils/interface';
 const SingleBlogCard = ({blogdata}:{blogdata:BlogPost}) => {
   return (
     <div key={blogdata.blogId}>
-      <div className="w-full md:w-3/4 m-auto py-16 px-4 relative">
+      <div className="relative w-full px-4 py-16 m-auto md:w-3/4">
         <div className="relative w-full h-96 lg:h-[700px]">
           <Image
             src={blogdata.image}
             alt={blogdata.title}
-            className="mb-8 object-cover"
+            className="object-cover mb-8"
             fill
             priority
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

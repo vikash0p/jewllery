@@ -14,8 +14,8 @@ const BlogCategoryComponent = () => {
     const getUniqueCategory = getUniqueCategoryFunction(blogPosts, "category");
     let getOnlyFiveCategory = getUniqueCategory.slice(0, 5);
   return (
-    <div className="bg-gray-100 p-4 mt-4">
-      <h2 className="text-xl font-bold text-gray-800 mb-4">Categories</h2>
+    <div className="p-4 mt-4 bg-gray-100">
+      <h2 className="mb-4 text-xl font-bold text-gray-800">Categories</h2>
       {getOnlyFiveCategory.map((value) => {
         return (
           <ul className="list-none" key={value}>

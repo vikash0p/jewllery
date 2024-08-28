@@ -63,32 +63,32 @@ const ContactPage: React.FC = () => {
     <div className="">
       <BreadcumbHeading heading="Contact Us" subHeading="Home / Contact Us" />
 
-      <div className="container mx-auto grid md:grid-cols-2 gap-8 py-10">
+      <div className="container grid gap-8 py-10 mx-auto md:grid-cols-2">
         {/* Contact Form */}
         <div>
           <SubHeading sub="Get In Touch" />
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-sm font-medium mb-1" htmlFor="name">
+              <label className="block mb-1 text-sm font-medium" htmlFor="name">
                 Name
               </label>
               <input
                 type="text"
                 id="name"
-                className="w-full border rounded p-2"
+                className="w-full p-2 border rounded"
                 placeholder="Your Name"
                 value={state.name}
                 onChange={handleInputChange}
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1" htmlFor="email">
+              <label className="block mb-1 text-sm font-medium" htmlFor="email">
                 Email
               </label>
               <input
                 type="email"
                 id="email"
-                className="w-full border rounded p-2"
+                className="w-full p-2 border rounded"
                 placeholder="Your Email"
                 value={state.email}
                 onChange={handleInputChange}
@@ -96,21 +96,21 @@ const ContactPage: React.FC = () => {
             </div>
             <div>
               <label
-                className="block text-sm font-medium mb-1"
+                className="block mb-1 text-sm font-medium"
                 htmlFor="message"
               >
                 Message
               </label>
               <textarea
                 id="message"
-                className="w-full border rounded p-2"
+                className="w-full p-2 border rounded"
                 placeholder="Your Message"
                 rows={5}
                 value={state.message}
                 onChange={handleInputChange}
               ></textarea>
             </div>
-            <button className="bg-orange-400 text-white rounded p-2 w-full hover:bg-orange-500 transition">
+            <button className="w-full p-2 text-white transition bg-orange-400 rounded hover:bg-orange-500">
               Send Message
             </button>
           </form>
@@ -122,15 +122,15 @@ const ContactPage: React.FC = () => {
           <SubHeading sub="Contact Information" />
           <div className="space-y-4">
             <div className="flex items-center">
-              <FaMapMarkerAlt className="text-orange-400 text-xl mr-3" />
+              <FaMapMarkerAlt className="mr-3 text-xl text-orange-400" />
               <p>123 Jewelry St, New York, NY 10001</p>
             </div>
             <div className="flex items-center">
-              <FaPhoneAlt className="text-orange-400 text-xl mr-3" />
+              <FaPhoneAlt className="mr-3 text-xl text-orange-400" />
               <p>(123) 456-7890</p>
             </div>
             <div className="flex items-center">
-              <FaEnvelope className="text-orange-400 text-xl mr-3" />
+              <FaEnvelope className="mr-3 text-xl text-orange-400" />
               <p>info@jewelrywebsite.com</p>
             </div>
           </div>

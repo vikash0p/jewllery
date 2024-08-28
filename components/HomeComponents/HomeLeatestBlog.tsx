@@ -8,7 +8,7 @@ const HomeLeatestBlog = () => {
   return (
     <div>
         <SubHeading sub='Latest Blog' />
-      <div className="container m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-10 py-10 ">
+      <div className="container grid grid-cols-1 gap-10 py-10 m-auto md:grid-cols-2 lg:grid-cols-3 ">
         {blogPosts.slice(0, 3).map((value) => {
           return (
             <BlogCard value={value} key={value.blogId} />

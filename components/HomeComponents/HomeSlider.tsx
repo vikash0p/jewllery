@@ -25,10 +25,10 @@ export default function HomeSlider() {
               alt="bannerImage"
               fill
               sizes="100vw"
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
             />
-            <div className="absolute w-full h-full flex flex-col justify-center items-start ps-3 md:px-10 xl:ps-20 gap-2 md:gap-3 lg:gap-4 xl:gap-5">
-              <h4 className="text-2xl lg:text-4xl font-bold">
+            <div className="absolute flex flex-col items-start justify-center w-full h-full gap-2 ps-3 md:px-10 xl:ps-20 md:gap-3 lg:gap-4 xl:gap-5">
+              <h4 className="text-2xl font-bold lg:text-4xl">
                 Family Jewelery Collection
               </h4>
               <p className=" lg:text-xl">
@@ -37,7 +37,7 @@ export default function HomeSlider() {
               <div>
                 <Link
                   href={"/collection"}
-                  className="text-xl bg-myColorOne px-6 py-2 rounded-sm hover:bg-myColorHoverOne transition-colors"
+                  className="px-6 py-2 text-xl transition-colors rounded-sm bg-myColorOne hover:bg-myColorHoverOne"
                 >
                   SHOP NOW
                 </Link>
@@ -52,10 +52,10 @@ export default function HomeSlider() {
               alt="bannerImage"
               fill
               sizes="100vw"
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
             />
-            <div className="absolute w-full h-full flex flex-col justify-center items-end pe-3 md:pe-10 xl:pe-20 border border-red-700 gap-2 md:gap-3 lg:gap-4 xl:gap-5">
-              <h4 className="text-2xl lg:text-4xl font-bold">
+            <div className="absolute flex flex-col items-end justify-center w-full h-full gap-2 border border-red-700 pe-3 md:pe-10 xl:pe-20 md:gap-3 lg:gap-4 xl:gap-5">
+              <h4 className="text-2xl font-bold lg:text-4xl">
                 Family Jewelery Collection
               </h4>
               <p className=" lg:text-xl">
@@ -64,7 +64,7 @@ export default function HomeSlider() {
               <div>
                 <Link
                   href={"/collection"}
-                  className="text-xl bg-myColorOne px-6 py-2 rounded-sm hover:bg-myColorHoverOne transition-colors"
+                  className="px-6 py-2 text-xl transition-colors rounded-sm bg-myColorOne hover:bg-myColorHoverOne"
                 >
                   SHOP NOW
                 </Link>
@@ -79,10 +79,10 @@ export default function HomeSlider() {
               alt="bannerImage"
               fill
               sizes="100vw"
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
             />
-            <div className="absolute w-full h-full flex flex-col justify-center items-start ps-3 md:px-10 xl:ps-20 gap-2 md:gap-3 lg:gap-4 xl:gap-5">
-              <h4 className="text-2xl lg:text-4xl font-bold">
+            <div className="absolute flex flex-col items-start justify-center w-full h-full gap-2 ps-3 md:px-10 xl:ps-20 md:gap-3 lg:gap-4 xl:gap-5">
+              <h4 className="text-2xl font-bold lg:text-4xl">
                 Family Jewelery Collection
               </h4>
               <p className=" lg:text-xl">
@@ -91,7 +91,7 @@ export default function HomeSlider() {
               <div>
                 <Link
                   href={"/collection"}
-                  className="text-xl bg-myColorOne px-6 py-2 rounded-sm hover:bg-myColorHoverOne transition-colors"
+                  className="px-6 py-2 text-xl transition-colors rounded-sm bg-myColorOne hover:bg-myColorHoverOne"
                 >
                   SHOP NOW
                 </Link>

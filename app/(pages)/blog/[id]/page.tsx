@@ -26,9 +26,9 @@ const SingleBlog = ({ params }: { params: { id: string } }) => {
             return (
               <div key={blogdata.blogId}>
                 <div className="flex flex-col">
-                  <div className="bg-gray-100 py-8">
-                    <div className="container mx-auto px-4">
-                      <h1 className="text-4xl font-bold text-gray-800 mb-2">
+                  <div className="py-8 bg-gray-100">
+                    <div className="container px-4 mx-auto">
+                      <h1 className="mb-2 text-4xl font-bold text-gray-800">
                         {blogdata.title}
                       </h1>
                       <p className="text-gray-600">
@@ -36,14 +36,14 @@ const SingleBlog = ({ params }: { params: { id: string } }) => {
                       </p>
                     </div>
                   </div>
-                  <div className="bg-white py-8">
-                    <div className="container mx-auto px-4 flex flex-col md:flex-row">
+                  <div className="py-8 bg-white">
+                    <div className="container flex flex-col px-4 mx-auto md:flex-row">
                       <SingleBlogCard
                         blogdata={blogdata}
                         key={blogdata.blogId}
                       />
 
-                      <div className="w-full md:w-1/4 px-4">
+                      <div className="w-full px-4 md:w-1/4">
                         {/* blogLinkscompoents form blogComponets */}
                         <BlogLinksComponent />
                         <BlogCategoryComponent />
@@ -56,7 +56,7 @@ const SingleBlog = ({ params }: { params: { id: string } }) => {
           })}
       </div>
       <div>
-        <div className="container m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-10 py-10 ">
+        <div className="container grid grid-cols-1 gap-10 py-10 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
           {randomizedPosts.slice(0, 4).map((value) => {
             return <BlogCard value={value} key={value.blogId} />;
           })}

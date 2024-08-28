@@ -19,12 +19,12 @@ const BlogCard = ({ value }: { value: BlogPost }) => {
             src={value.image}
             alt={value.title}
             fill
-            className="w-full h-full object-cover hover:scale-110 transition-transform cursor-pointer object-center"
+            className="object-cover object-center w-full h-full transition-transform cursor-pointer hover:scale-110"
             priority
             sizes="(min-width: 1480px) 419px, (min-width: 1040px) 28.57vw, (min-width: 780px) calc(45.83vw - 20px), (min-width: 480px) 384px, calc(92.5vw - 42px)"
           />
 
-        <div className="absolute top-5 left-2 bg-orange-400 text-white px-3 py-1">
+        <div className="absolute px-3 py-1 text-white bg-orange-400 top-5 left-2">
           {value.date}
         </div>
       </div>

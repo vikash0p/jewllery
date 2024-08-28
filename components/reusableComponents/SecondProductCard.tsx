@@ -11,7 +11,7 @@ const SecondProductCard = ({value}:{value:JewelleryItem}) => {
       <div className="relative w-56 h-64">
         <Image
           src={value.imageUrl}
-          className="w-full h-full object-cover"
+          className="object-cover w-full h-full"
           alt={value.description}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -22,7 +22,7 @@ const SecondProductCard = ({value}:{value:JewelleryItem}) => {
         <h3 className="text-sm">{value.name}</h3>
         <div className="flex gap-10">
           <p className="text-sm">$ {value.price} </p>
-          <p className="line-through  text-gray-500 text-sm ">
+          <p className="text-sm text-gray-500 line-through ">
             $ {discountedPrice.toFixed(2)}{" "}
           </p>
         </div>

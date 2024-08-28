@@ -4,7 +4,7 @@ import React from "react";
 
 const LoadingData = () => {
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center ">
+    <div className="flex flex-col items-center justify-center w-full h-screen ">
       <div className="loader"></div>
     </div>
   );

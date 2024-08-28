@@ -5,9 +5,9 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className=" ">
-        <div className="container mx-auto p-0 md:p-8 xl:px-0">
-          <div className="mx-auto max-w-7xl px-6 pb-10 pt-16">
+      <footer className="">
+        <div className="container p-0 mx-auto md:p-8 xl:px-0">
+          <div className="px-6 pt-16 pb-10 mx-auto max-w-7xl">
             <div className="xl:grid xl:grid-cols-3 xl:gap-8">
               <div className="space-y-4">
                 <div>
@@ -44,7 +44,7 @@ const Footer = () => {
                     <svg
                       fill="currentColor"
                       viewBox="0 0 24 24"
-                      className="h-8 w-8 text-blue-500"
+                      className="w-8 h-8 text-blue-500"
                       aria-hidden="true"
                     >
                       <path
@@ -64,7 +64,7 @@ const Footer = () => {
                     <svg
                       fill="currentColor"
                       viewBox="0 0 24 24"
-                      className="h-8 w-8 text-blue-500"
+                      className="w-8 h-8 text-blue-500"
                       aria-hidden="true"
                     >
                       <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
@@ -72,17 +72,17 @@ const Footer = () => {
                   </a>
                 </div>
               </div>
-              <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+              <div className="grid grid-cols-2 gap-8 mt-16 xl:col-span-2 xl:mt-0">
                 <div className="md:grid md:grid-cols-2 md:gap-8">
                   <div>
-                    <h3 className="text-md font-semibold leading-6 ">
+                    <h3 className="font-semibold leading-6 text-md ">
                       Jewelry Collections
                     </h3>
                     <ul role="list" className="mt-6 space-y-4">
                       <li>
                         <a
                           href="/engagement-rings"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Engagement Rings
                         </a>
@@ -90,7 +90,7 @@ const Footer = () => {
                       <li>
                         <a
                           href="/necklaces"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Necklaces
                         </a>
@@ -98,7 +98,7 @@ const Footer = () => {
                       <li>
                         <a
                           href="/bracelets"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Bracelets
                         </a>
@@ -106,7 +106,7 @@ const Footer = () => {
                       <li>
                         <a
                           href="/earrings"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Earrings
                         </a>
@@ -114,14 +114,14 @@ const Footer = () => {
                     </ul>
                   </div>
                   <div className="mt-10 md:mt-0">
-                    <h3 className="text-md font-semibold leading-6 ">
+                    <h3 className="font-semibold leading-6 text-md ">
                       Customer Care
                     </h3>
                     <ul role="list" className="mt-6 space-y-4">
                       <li>
                         <a
                           href="/faq"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           FAQ
                         </a>
@@ -129,7 +129,7 @@ const Footer = () => {
                       <li>
                         <a
                           href="/returns"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Returns
                         </a>
@@ -137,7 +137,7 @@ const Footer = () => {
                       <li>
                         <a
                           href="/contact"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Contact Us
                         </a>
@@ -147,14 +147,14 @@ const Footer = () => {
                 </div>
                 <div className="md:grid md:grid-cols-2 md:gap-8">
                   <div>
-                    <h3 className="text-md font-semibold leading-6 ">
+                    <h3 className="font-semibold leading-6 text-md ">
                       Resources
                     </h3>
                     <ul role="list" className="mt-6 space-y-4">
                       <li>
                         <a
                           href="/blog"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Blog
                         </a>
@@ -162,7 +162,7 @@ const Footer = () => {
                       <li>
                         <a
                           href="/careers"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Careers
                         </a>
@@ -170,7 +170,7 @@ const Footer = () => {
                       <li>
                         <a
                           href="/privacy-policy"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Privacy Policy
                         </a>
@@ -178,14 +178,14 @@ const Footer = () => {
                     </ul>
                   </div>
                   <div className="mt-10 md:mt-0">
-                    <h3 className="text-md font-semibold leading-6 ">
+                    <h3 className="font-semibold leading-6 text-md ">
                       Company
                     </h3>
                     <ul role="list" className="mt-6 space-y-4">
                       <li>
                         <a
                           href="/about"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           About Us
                         </a>
@@ -193,7 +193,7 @@ const Footer = () => {
                       <li>
                         <a
                           href="/terms-of-service"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Terms of Service
                         </a>
@@ -201,7 +201,7 @@ const Footer = () => {
                       <li>
                         <a
                           href="/contact"
-                          className="text-md leading-6  hover:text-gray-300"
+                          className="leading-6 text-md hover:text-gray-300"
                         >
                           Contact Us
                         </a>
@@ -211,8 +211,8 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-16 border-t bo/30 pt-8 sm:mt-20 lg:mt-24">
-              <div className="text-md text-center ">
+            <div className="pt-8 mt-16 border-t bo/30 sm:mt-20 lg:mt-24">
+              <div className="text-center text-md ">
                 &copy; 2024 Elegant Gems. Crafted with
                 <span className="text-red-500"> ♥ </span> by the Jewelry
                 Enthusiasts.

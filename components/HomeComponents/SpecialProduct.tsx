@@ -38,7 +38,7 @@ const SpecialProduct: React.FC = () => {
         <SubHeading sub="Special Products" />
       </div>
       {isLoading ? (
-        <div className="container m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5  place-items-center">
+        <div className="container grid grid-cols-1 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 place-items-center">
           {Array.from({ length: 5 }).map((_, index) => (
             <LoadingSkeletoTopSellingProduct key={index} />
           ))}
@@ -62,7 +62,7 @@ const SpecialProduct: React.FC = () => {
                 slidesPerView: 5,
               },
             }}
-            className="mySwiper w-full h-full"
+            className="w-full h-full mySwiper"
           >
             {data
               ?.filter((value) => value.rating >= 4.8)

@@ -4,10 +4,10 @@ import React from "react";
 
 const HomeBrand = () => {
   return (
-    <div className="container m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 py-10  items-center ">
+    <div className="container grid items-center grid-cols-1 py-10 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 ">
       {brandData.map((value) => {
         return (
-          <div className="relative max-w-sm h-32" key={value.id}>
+          <div className="relative h-32 max-w-sm" key={value.id}>
             <Image
               src={value.img}
               alt={value.img}

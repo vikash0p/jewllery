@@ -54,7 +54,7 @@ const FilterByCategory = () => {
         {isLoading ? (
           <LoadingSkeleton />
         ) : (
-          <div className="max-w-7xl m-auto flex flex-wrap gap-8 justify-between pt-8">
+          <div className="flex flex-wrap justify-between gap-8 pt-8 m-auto max-w-7xl">
             {/* Display first product in each category */}
             {firstProductInEachCategory &&
               Object.entries(firstProductInEachCategory).map(
@@ -68,16 +68,16 @@ const FilterByCategory = () => {
                         height={100}
                         priority
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover w-36 h-36 rounded-full cursor-pointer"
+                        className="object-cover rounded-full cursor-pointer w-36 h-36"
                       />
                     </Link>
-                    <h2 className="text-lg font-bold mt-2">{category}</h2>
+                    <h2 className="mt-2 text-lg font-bold">{category}</h2>
                   </div>
                 )
               )}
           </div>
         )}
-        <div className="max-w-7xl m-auto flex flex-wrap gap-8 justify-between mt-4">
+        <div className="flex flex-wrap justify-between gap-8 m-auto mt-4 max-w-7xl">
           {productsByCategory &&
             Object.entries(productsByCategory).map(([category, count]) => (
               <div key={category} className="text-center px-7">

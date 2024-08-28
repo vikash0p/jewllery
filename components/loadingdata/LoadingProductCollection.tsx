@@ -2,26 +2,26 @@ import React from 'react';
 
 const LoadingProductCollection = () => {
   return (
-    <div className="container m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 py-10">
+    <div className="container grid grid-cols-1 gap-5 py-10 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {Array.from({ length: 12 }).map((_, index) => (
         <div
           key={index}
-          className="animate-pulse flex flex-col space-y-4 p-4 border rounded-lg shadow-lg"
+          className="flex flex-col p-4 space-y-4 border rounded-lg shadow-lg animate-pulse"
         >
           {/* Image Placeholder */}
-          <div className="bg-gray-300 h-48 rounded-md"></div>
+          <div className="h-48 bg-gray-300 rounded-md"></div>
 
           {/* Name Placeholder */}
           <div className="space-y-2">
-            <div className="bg-gray-300 h-6 rounded-md"></div>
-            <div className="bg-gray-300 h-10 rounded-md "></div>
+            <div className="h-6 bg-gray-300 rounded-md"></div>
+            <div className="h-10 bg-gray-300 rounded-md "></div>
           </div>
 
           {/* Price and Stock Placeholder */}
           <div className="flex items-center justify-between">
-            <div className="bg-gray-300 h-6 w-1/3 rounded-md"></div>
-            <div className="bg-gray-300 h-6 w-1/3 rounded-md"></div>
-            <div className="bg-gray-300 h-6 w-1/4 rounded-md"></div>
+            <div className="w-1/3 h-6 bg-gray-300 rounded-md"></div>
+            <div className="w-1/3 h-6 bg-gray-300 rounded-md"></div>
+            <div className="w-1/4 h-6 bg-gray-300 rounded-md"></div>
           </div>
 
           {/* Rating Placeholder */}
@@ -29,14 +29,14 @@ const LoadingProductCollection = () => {
             {Array.from({ length: 5 }).map((_, starIndex) => (
               <div
                 key={starIndex}
-                className="bg-gray-300 h-5 w-5 rounded-full mr-1"
+                className="w-5 h-5 mr-1 bg-gray-300 rounded-full"
               ></div>
             ))}
-            <div className="bg-gray-300 h-6 w-32 rounded-md ml-4"></div>
+            <div className="w-32 h-6 ml-4 bg-gray-300 rounded-md"></div>
           </div>
 
           {/* Cart Button Placeholder */}
-          <div className="bg-gray-300 h-10 w-full rounded-md mt-auto"></div>
+          <div className="w-full h-10 mt-auto bg-gray-300 rounded-md"></div>
         </div>
       ))}
     </div>

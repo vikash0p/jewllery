@@ -43,7 +43,7 @@ const TopSellingProduct = () => {
       <div className="py-10">
         <SubHeading sub="Top Selling Products" />
       </div>
-      <div className="text-center space-x-10">
+      <div className="space-x-10 text-center">
         <button
           className={`bg-orange-400 px-5 py-2 ${
             index === 0 ? "bg-orange-600 text-white font-semibold" : ""
@@ -79,20 +79,20 @@ const TopSellingProduct = () => {
         </button>
       </div>
       {isLoading ? (
-        <div className="container m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 py-16 gap-y-10">
+        <div className="container grid grid-cols-1 py-16 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-y-10">
           {Array.from({ length: 10 }).map((_, index) => (
             <LoadingSkeletoTopSellingProduct key={index} />
           ))}
         </div>
       ) : (
-        <div className="container m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 py-16 gap-y-10">
+        <div className="container grid grid-cols-1 py-16 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-y-10">
           {displayProducts}
         </div>
       )}
       <div className="w-full m-auto text-center">
         <Link
           href={"/collection"}
-          className="bg-orange-400 px-8 py-2 text-center "
+          className="px-8 py-2 text-center bg-orange-400 "
         >
           READ MORE
         </Link>

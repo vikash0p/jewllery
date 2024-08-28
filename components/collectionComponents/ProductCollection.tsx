@@ -49,16 +49,16 @@ const ProductCollection = () => {
         <LoadingProductCollection />
       ) : (
         <div>
-          <div className="container m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 py-10">
+          <div className="container grid grid-cols-1 gap-5 py-10 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {currentJewellery.map((value: JewelleryItem) => (
               <ProductCard value={value} key={value._id} />
             ))}
           </div>
 
-          <div className="space-x-10 m-auto text-center flex flex-row items-center justify-center">
+          <div className="flex flex-row items-center justify-center m-auto space-x-10 text-center">
             <button
               type="button"
-              className="bg-orange-500 px-8 py-2"
+              className="px-8 py-2 bg-orange-500"
               onClick={PrevClickHandlerFunction}
               disabled={currentPage === 1}
             >
@@ -67,7 +67,7 @@ const ProductCollection = () => {
             <h5>{currentPage} </h5>
             <button
               type="button"
-              className="bg-orange-500 px-8 py-2"
+              className="px-8 py-2 bg-orange-500"
               onClick={NextClickHandlerFunction}
               disabled={
                 data && currentPage === Math.ceil(data.length / postsPerPage)

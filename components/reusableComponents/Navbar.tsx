@@ -62,16 +62,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-myColor text-black shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="text-black shadow-md bg-myColor">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-3xl font-bold ">
            Elegant Gems
           </Link>
 
           {/* Links for larger screens */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="items-center hidden space-x-4 md:flex">
             {links.map((link, index) => (
               <Link
                 key={index}
@@ -94,7 +94,7 @@ const Navbar = () => {
             <div className="">
               <a href="/cart" className="relative flex items-center">
                 <ShoppingCart size={25} />
-                <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-myColorHoverOne text-white text-xs font-bold flex items-center justify-center">
+                <span className="absolute flex items-center justify-center w-5 h-5 text-xs font-bold text-white rounded-full -top-2 -right-2 bg-myColorHoverOne">
                   3
                 </span>
               </a>
@@ -118,14 +118,14 @@ const Navbar = () => {
         initial={false}
         animate={isOpen ? "open" : "closed"}
         variants={containerVariants}
-        className="md:hidden overflow-hidden bg-myColor"
+        className="overflow-hidden md:hidden bg-myColor"
       >
         <motion.div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {links.map((link, index) => (
             <motion.div key={index} variants={linkVariants}>
               <Link
                 href={link.path}
-                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-myColorHover"
+                className="block px-3 py-2 text-base font-medium rounded-md hover:bg-myColorHover"
               >
                 {link.name}
               </Link>
