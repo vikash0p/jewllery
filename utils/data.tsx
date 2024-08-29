@@ -3,7 +3,7 @@ import { FaShippingFast, FaHeadset, FaMoneyBillWave } from "react-icons/fa";
 import { FaPaintBrush, FaShieldAlt,  } from "react-icons/fa";
 import { TestimonialData } from "./interface";
 import { Features } from "./interface";
-import { BlogPost,brandDataInterface,Feature, Section, BlogLink } from "./interface";
+import { BlogPost,brandDataInterface,Feature, Section, BlogLink , Banner} from "./interface";
 
 export const features: Features[] = [
   {
@@ -455,5 +455,25 @@ export const blogLinks: BlogLink[] = [
     id: "d9l9zaa8svc0Uol",
     title: "The Art of Jewelry",
     url: "/blog/d9l9zaa8svc0Uol",
+  },
+];
+
+
+export const banners: Banner[] = [
+  {
+    src: "/sub-banner-1.jpg",
+    alt: "bannerImage1",
+    discountText: "Discount 20%",
+    title: "Family Jewelry Collection",
+    linkText: "SHOP NOW",
+    linkUrl: "/collection",
+  },
+  {
+    src: "/sub-banner-2.jpg",
+    alt: "bannerImage2",
+    discountText: "Discount 20%",
+    title: "Family Jewelry Collection",
+    linkText: "SHOP NOW",
+    linkUrl: "/collection",
   },
 ];

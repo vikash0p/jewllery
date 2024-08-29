@@ -62,3 +62,14 @@ export interface BlogLink {
   title: string;
   url: string;
 }
+
+
+export interface Banner {
+  src: string;
+  alt: string;
+  discountText: string;
+  title: string;
+  linkText: string;
+  linkUrl: string;
+}
+
