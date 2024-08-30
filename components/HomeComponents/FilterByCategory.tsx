@@ -1,27 +1,25 @@
 "use client";
 import React from "react";
 import SubHeading from "../reusableComponents/SubHeading";
-import { useQuery } from "@tanstack/react-query";
-import { getJewelleryData } from "@/utils/FetchDataFromBackend";
 import Image from "next/image";
 import Link from "next/link";
 import { JewelleryItem } from "@/utils/interface";
 import { LoadingSkeleton } from "../loadingdata/LoadingSkeleton";
+import { useGlobalJewelleryContext } from "@/context/JewelleryProvider";
 
 const FilterByCategory = () => {
-  const { isLoading, isError, data, error } = useQuery<JewelleryItem[]>({
-    queryKey: ["jewellery"],
-    queryFn: getJewelleryData,
-  });
-
+  const { data, error, isError, isLoading } = useGlobalJewelleryContext();
 
   // Step 1: Extract unique categories
   const uniqueCategories = Array.from(
-    new Set(data?.map((item: JewelleryItem) => item.category) || [])
+    new Set(
+      data?.jewelleryList?.map((item: JewelleryItem) => item.category) || []
+    )
   );
 
+  console.log(uniqueCategories);
   // Step 2: Get the first product in each category
-  const firstProductInEachCategory = data?.reduce(
+  const firstProductInEachCategory = data?.jewelleryList?.reduce(
     (acc: Record<string, JewelleryItem>, item: JewelleryItem) => {
       if (!acc[item.category]) {
         acc[item.category] = item;
@@ -30,9 +28,10 @@ const FilterByCategory = () => {
     },
     {}
   );
+  console.log(firstProductInEachCategory);
 
   // Step 3: Count the number of products by category
-  const productsByCategory = data?.reduce(
+  const productsByCategory = data?.jewelleryList?.reduce(
     (acc: Record<string, number>, item: JewelleryItem) => {
       if (acc[item.category]) {
         acc[item.category]++;
@@ -45,7 +44,6 @@ const FilterByCategory = () => {
   );
 
   // Skeleton loading component
-
 
   return (
     <div>

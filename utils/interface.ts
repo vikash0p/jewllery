@@ -14,6 +14,14 @@ export interface JewelleryItem {
   reviews: number;
 }
 
+export interface PaginatedResponse {
+  jewelleryList: JewelleryItem[];
+  page: number;
+  totalPages: number;
+  totalItems: number;
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
+}
 export type TestimonialData = {
   id: number;
   name: string;
@@ -73,3 +81,10 @@ export interface Banner {
   linkUrl: string;
 }
 
+export interface Slide {
+  imgSrc: string;
+  altText: string;
+  heading: string;
+  description: string;
+  linkUrl: string;
+}

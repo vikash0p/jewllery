@@ -1,9 +1,8 @@
 'use client'
 import React from 'react'
-import { useRouter } from "next/navigation";
+import { LinkContainer } from '../reusableComponents';
 
 const DiscountMiddlePage = () => {
-    const router = useRouter();
 
   return (
     <div className="discountMiddlePageBackgroundImage w-full h-[550px] mt-10 ">
@@ -13,13 +12,14 @@ const DiscountMiddlePage = () => {
           <h2 className="text-4xl text-orange-400">Flat 40% Discount</h2>
           <h3 className="text-6xl">Gold And Diamond Earrings</h3>
           <p>Designer Jewellery Necklaces-Bracelets-Earings</p>
-          <button
-            type="button"
-            className="px-8 py-2 uppercase bg-orange-400"
-            onClick={() => router.push("/collection")}
-          >
-            Shop Now
-          </button>
+          <div>
+            <LinkContainer
+              href="/collection"
+              className="px-8 py-2 uppercase bg-orange-400"
+              linkName='SHOP NOW'
+            />
+          </div>
+
         </div>
       </div>
     </div>

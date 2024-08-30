@@ -1,17 +1,15 @@
 'use client'
-import { getJewelleryData } from '@/utils/FetchDataFromBackend';
-import { useQuery } from '@tanstack/react-query';
 import React from 'react'
 import { JewelleryItem } from '@/utils/interface';
 import LoadingProductCollection from '../loadingdata/LoadingProductCollection';
 import ProductCard from '../reusableComponents/ProductCard';
 import { MdArrowForwardIos } from "react-icons/md";
+import { useGlobalJewelleryContext } from '@/context/JewelleryProvider';
 const FilterCategoryByCollection = ({id}:{id:string}) => {
-    const { isLoading, isError, data, error } = useQuery<JewelleryItem[]>({
-      queryKey: ["jewellery"],
-      queryFn: getJewelleryData,
-    });
-      if (isError) return <div>An error has occurred: {error.message}</div>;
+
+  const { isLoading, isError, data, error } = useGlobalJewelleryContext();
+
+      if (isError) return <div>An error has occurred: </div>;
 
   return (
     <div>
@@ -29,7 +27,7 @@ const FilterCategoryByCollection = ({id}:{id:string}) => {
             <h5 className='text-orange-600'>{id} </h5>
           </div>
           <div className="container grid grid-cols-1 gap-5 py-10 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {data
+            {data?.jewelleryList
               ?.filter((filterValue) => filterValue.category === id)
               .map((value: JewelleryItem) => (
                 <ProductCard value={value} key={value._id} />

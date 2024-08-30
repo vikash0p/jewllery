@@ -3,7 +3,32 @@ import { FaShippingFast, FaHeadset, FaMoneyBillWave } from "react-icons/fa";
 import { FaPaintBrush, FaShieldAlt,  } from "react-icons/fa";
 import { TestimonialData } from "./interface";
 import { Features } from "./interface";
-import { BlogPost,brandDataInterface,Feature, Section, BlogLink , Banner} from "./interface";
+import { BlogPost,brandDataInterface,Feature, Section, BlogLink , Banner, Slide} from "./interface";
+
+export const slides: Slide[] = [
+   {
+     imgSrc: "/homejew/abc1.jpg",
+     altText: "bannerImage1",
+     heading: "Family Jewelry Collection",
+     description: "Designer Jewelry Necklaces-Bracelets-Earrings",
+     linkUrl: "/collection",
+   },
+   {
+     imgSrc: "/homejew/abc2.jpg",
+     altText: "bannerImage2",
+     heading: "Exclusive Diamond Collection",
+     description: "Brilliant Cut Diamonds - Rings and Pendants",
+     linkUrl: "/collection",
+   },
+   {
+     imgSrc: "/homejew/abc3.jpg",
+     altText: "bannerImage3",
+     heading: "Luxury Gold Jewelry",
+     description: "Gold Necklaces - Bracelets - Earrings",
+     linkUrl: "/collection",
+   },
+ ];
+
 
 export const features: Features[] = [
   {

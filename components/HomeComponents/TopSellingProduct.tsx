@@ -1,25 +1,20 @@
 "use client";
 import React, { useState } from "react";
 import SubHeading from "../reusableComponents/SubHeading";
-import { useQuery } from "@tanstack/react-query";
-import { getJewelleryData } from "@/utils/FetchDataFromBackend";
-import { JewelleryItem } from "@/utils/interface";
 import Link from "next/link";
 import LoadingSkeletoTopSellingProduct from "../loadingdata/LoadingSkeletoTopSellingProduct";
 import SecondProductCard from "../reusableComponents/SecondProductCard";
+import { useGlobalJewelleryContext } from "@/context/JewelleryProvider";
 const TopSellingProduct = () => {
-  const { isLoading, isError, data, error } = useQuery<JewelleryItem[]>({
-    queryKey: ["jewellery"],
-    queryFn: getJewelleryData,
-  });
+  const { isLoading, isError, data, error } = useGlobalJewelleryContext();
 
   const [filter, setFilter] = useState<string | null>(null);
   const [index, setIndex] = useState<number>(0);
 
 
-  if (isError) return <div>An error has occurred: {error.message}</div>;
+  if (isError) return <div>An error has occurred: </div>;
 
-  const filteredProducts = data?.filter((value) => {
+  const filteredProducts = data?.jewelleryList?.filter((value) => {
     if (filter === "new") {
       return value.reviews <= 50;
     } else if (filter === "featured") {

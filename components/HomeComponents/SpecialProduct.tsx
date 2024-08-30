@@ -1,30 +1,21 @@
 "use client";
 import React from "react";
-import { JewelleryItem } from "@/utils/interface";
-import { getJewelleryData } from "@/utils/FetchDataFromBackend";
 import SecondProductCard from "../reusableComponents/SecondProductCard";
-import { useQuery } from "@tanstack/react-query";
 import LoadingSkeletoTopSellingProduct from "../loadingdata/LoadingSkeletoTopSellingProduct";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-// Import required modules
 import { Navigation } from "swiper/modules";
 import SubHeading from "../reusableComponents/SubHeading";
+import { useGlobalJewelleryContext } from "@/context/JewelleryProvider";
 
 const SpecialProduct: React.FC = () => {
-  const { isLoading, isError, data, error } = useQuery<JewelleryItem[]>({
-    queryKey: ["jewellery"],
-    queryFn: getJewelleryData,
-  });
+  const{data,error,isError,isLoading}=useGlobalJewelleryContext();
 
-//   if (isLoading) return <LoadingSkeletoTopSellingProduct />;
-  if (isError) return <div>An error occurred: {error?.message}</div>;
 
-  const specialProductData = data
+  if (isError) return <div>An error occurred: </div>;
+
+  const specialProductData = data?.jewelleryList
     ?.filter((value) => value.rating >= 4.8)
     .map((value) => (
       <SwiperSlide key={value._id} className="w-full h-full">
@@ -64,7 +55,7 @@ const SpecialProduct: React.FC = () => {
             }}
             className="w-full h-full mySwiper"
           >
-            {data
+            {data?.jewelleryList
               ?.filter((value) => value.rating >= 4.8)
               .map((value) => (
                 <SwiperSlide key={value._id} className="w-full h-full">

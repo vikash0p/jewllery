@@ -1,6 +1,7 @@
 import { brandData } from "@/utils/data";
 import Image from "next/image";
 import React from "react";
+import { ImageContainer } from "../reusableComponents";
 
 const HomeBrand = () => {
   return (
@@ -8,11 +9,10 @@ const HomeBrand = () => {
       {brandData.map((value) => {
         return (
           <div className="relative h-32 max-w-sm" key={value.id}>
-            <Image
+            <ImageContainer
               src={value.img}
               alt={value.img}
               className="object-contain w-full h-full "
-              fill
               sizes="(min-width: 1540px) 267px, (min-width: 1280px) calc(12.5vw + 144px), (min-width: 1060px) calc(26vw + 56px), (min-width: 1020px) calc(-295vw + 3393px), (min-width: 780px) calc(11.82vw + 266px), (min-width: 480px) 384px, calc(92.5vw - 42px)"
             />
           </div>

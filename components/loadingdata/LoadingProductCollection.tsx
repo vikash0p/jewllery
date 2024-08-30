@@ -1,8 +1,13 @@
+'use client'
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const LoadingProductCollection = () => {
+  const pathName=usePathname();
   return (
-    <div className="container grid grid-cols-1 gap-5 py-10 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div
+      className={`container grid grid-cols-1 gap-5 py-10 m-auto md:grid-cols-2 lg:grid-cols-3  ${pathName === '/collection'? "" :"xl:grid-cols-4" }`}
+    >
       {Array.from({ length: 12 }).map((_, index) => (
         <div
           key={index}
