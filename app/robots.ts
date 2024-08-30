@@ -4,9 +4,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
-      disallow: "/private/",
+      allow: "*",
+      disallow: "/admin/*",
     },
-    sitemap: "https://elegantjewelry.com/sitemap.xml",
+    sitemap: "https://jewllery-eight.vercel.app/sitemap.xml",
   };
 }

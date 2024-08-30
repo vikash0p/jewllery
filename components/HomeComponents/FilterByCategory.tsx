@@ -17,7 +17,7 @@ const FilterByCategory = () => {
     )
   );
 
-  console.log(uniqueCategories);
+  // console.log(uniqueCategories);
   // Step 2: Get the first product in each category
   const firstProductInEachCategory = data?.jewelleryList?.reduce(
     (acc: Record<string, JewelleryItem>, item: JewelleryItem) => {
@@ -28,7 +28,7 @@ const FilterByCategory = () => {
     },
     {}
   );
-  console.log(firstProductInEachCategory);
+  // console.log(firstProductInEachCategory);
 
   // Step 3: Count the number of products by category
   const productsByCategory = data?.jewelleryList?.reduce(

@@ -21,7 +21,7 @@ export const JewelleryProvider = ({ children }: { children: ReactNode }) => {
     queryFn: getJewelleryData,
   });
 
-  console.log("🚀 ~ file: JewelleryProvider.tsx:24 ~ data:", data);
+  // console.log("🚀 ~ file: JewelleryProvider.tsx:24 ~ data:", data);
 
   return (
     <JewelleryContext.Provider value={{ isLoading, isError, data, error }}>
