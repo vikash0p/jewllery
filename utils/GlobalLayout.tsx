@@ -6,16 +6,18 @@ import React from "react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { JewelleryProvider } from "@/context/JewelleryProvider";
+import { JewelleryPaginationProvider } from "@/context/JewelleryPaginationProvider";
 const queryClient = new QueryClient();
 
 const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <QueryClientProvider client={queryClient}>
       <JewelleryProvider>
-        {/* <TopBar /> */}
-        <Navbar />
-        <main>{children} </main>
-        <Footer />
+        <JewelleryPaginationProvider>
+          <Navbar />
+          <main>{children} </main>
+          <Footer />
+        </JewelleryPaginationProvider>
       </JewelleryProvider>
 
       <ReactQueryDevtools initialIsOpen={false} />

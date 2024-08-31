@@ -4,16 +4,18 @@ import { JewelleryItem } from '@/utils/interface';
 import LoadingProductCollection from '../loadingdata/LoadingProductCollection';
 import ProductCard from '../reusableComponents/ProductCard';
 import { MdArrowForwardIos } from "react-icons/md";
-import { useGlobalJewelleryContext } from '@/context/JewelleryProvider';
+import { useGlobalJewelleryPaginationContext } from '@/context/JewelleryPaginationProvider';
+
 const FilterCategoryByCollection = ({id}:{id:string}) => {
 
-  const { isLoading, isError, data, error } = useGlobalJewelleryContext();
+  const { isLoading, isError, data, error,isFetching } = useGlobalJewelleryPaginationContext();
+
 
       if (isError) return <div>An error has occurred: </div>;
 
   return (
     <div>
-      {isLoading ? (
+      {isFetching ? (
         <LoadingProductCollection />
       ) : (
         <div>
