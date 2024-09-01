@@ -7,6 +7,7 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { JewelleryProvider } from "@/context/JewelleryProvider";
 import { JewelleryPaginationProvider } from "@/context/JewelleryPaginationProvider";
+import JewelleryFilterDataProvider from "@/context/JewelleryFilterDataProvider";
 const queryClient = new QueryClient();
 
 const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
@@ -14,9 +15,11 @@ const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
     <QueryClientProvider client={queryClient}>
       <JewelleryProvider>
         <JewelleryPaginationProvider>
-          <Navbar />
-          <main>{children} </main>
-          <Footer />
+          <JewelleryFilterDataProvider>
+            <Navbar />
+            <main>{children} </main>
+            <Footer />
+          </JewelleryFilterDataProvider>
         </JewelleryPaginationProvider>
       </JewelleryProvider>
 
