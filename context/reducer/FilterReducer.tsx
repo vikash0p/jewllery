@@ -34,29 +34,47 @@ interface SortFilterDataAction {
 
 interface searchFilter {
   type: "SET_QUERY";
-  payload:{
-    name:string;
-    value:string,
+  payload: {
+    name: string;
+    value: string;
   };
 }
 
 interface searchProduct {
   type: "SEARCH_PRODUCT";
 }
- export type FilterAction =
-   | LoadFilterDataAction
-   | SetGridViewAction
-   | SetListViewAction
-   | SearchDataAction
-   | SortFilterDataAction
-   | UpdateSearchTermAction
-   | searchFilter
-   | searchProduct;
+
+interface filterByRatingProduct {
+  type: "FILTER_BY_RATING_COLLECTION";
+}
+
+interface filterRating {
+  type: "FILTER_RATING";
+  payload: number;
+}
+
+export type FilterAction =
+  | LoadFilterDataAction
+  | SetGridViewAction
+  | SetListViewAction
+  | SearchDataAction
+  | SortFilterDataAction
+  | UpdateSearchTermAction
+  | searchFilter
+  | searchProduct
+  | filterByRatingProduct
+  | filterRating;
 
 const FilterReducer = (
   state: initialStateInterface,
   action: FilterAction
 ): initialStateInterface => {
+  const {
+    filters: { rate, searchBar },
+    all_Products,
+    filter_Products,
+  } = state;
+
   switch (action.type) {
     case "LOAD_FILTER_DATA":
       return {
@@ -64,16 +82,19 @@ const FilterReducer = (
         filter_Products: action.payload ? [...action.payload] : [],
         all_Products: action.payload ? [...action.payload] : [],
       };
+
     case "SET_GRID_VIEW":
       return {
         ...state,
         Grid_View: true,
       };
+
     case "SET_LIST_VIEW":
       return {
         ...state,
         Grid_View: false,
       };
+
     case "SEARCH_DATA":
       return {
         ...state,
@@ -114,24 +135,45 @@ const FilterReducer = (
           [name]: value,
         },
       };
-      case 'SEARCH_PRODUCT':
-        const {all_Products,filters:{searchBar}}=state;
-        let tempProduct=all_Products ? [...all_Products] :[];
 
-        if (searchBar) {
-          tempProduct = tempProduct.filter(
-            (item) =>
-              searchBar == "" ? item  :
-              item.name.toLowerCase().includes(searchBar.toLowerCase()) ||
+    case "SEARCH_PRODUCT":
+      let tempProduct = all_Products ? [...all_Products] : [];
+
+      if (searchBar) {
+        tempProduct = tempProduct.filter((item) =>
+          searchBar === ""
+            ? item
+            : item.name.toLowerCase().includes(searchBar.toLowerCase()) ||
               item.category.toLowerCase().includes(searchBar.toLowerCase())
-          );
-        }
+        );
+      }
 
+      return {
+        ...state,
+        filter_Products: tempProduct,
+      };
 
-        return{
-          ...state,
-          filter_Products :tempProduct,
-        }
+    case "FILTER_RATING":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          rate: action.payload,
+        },
+      };
+
+    case "FILTER_BY_RATING_COLLECTION":
+      let tempRatingCollection = all_Products ? [...all_Products] : [];
+      if (rate) {
+        tempRatingCollection = tempRatingCollection.filter(
+          (value) => Math.trunc(value.rating) === rate
+        );
+      }
+
+      return {
+        ...state,
+        filter_Products: tempRatingCollection,
+      };
 
     default:
       return state;

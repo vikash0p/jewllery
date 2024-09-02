@@ -11,6 +11,7 @@ import { useState } from "react";
 import { useGlobalFilterDataContext } from "@/context/JewelleryFilterDataProvider";
 import ListViewCard from "./ListViewCard";
 import ListViewCardSkeleton from "../loadingdata/ListViewCardSkeleton";
+import CollectionFilterData from "./CollectionFilterData";
 
 const ProductCollection = () => {
   const { isLoading, isError, data, error } =
@@ -70,7 +71,9 @@ const ProductCollection = () => {
       </div>
       {/*all product  */}
       <div className="container m-auto flex flex-row h-full py-10">
-        <div className="basis-1/4 h-full border  min-h-screen bg-orange-300 border-red-700"></div>
+        <div className="basis-1/4   min-h-screen ">
+        <CollectionFilterData />
+        </div>
         <div className="basis-3/4">
           {/* Grid view */}
           <div>

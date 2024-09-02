@@ -15,8 +15,10 @@ interface FilterDataInterface {
   dispatch: React.Dispatch<FilterAction>;
   filters: {
     searchBar: string;
+    rate: number ;
   };
   handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleRatingCollectionFun:(i:number)=>void;
 }
 
 export interface initialStateInterface {
@@ -25,7 +27,8 @@ export interface initialStateInterface {
   Grid_View: boolean;
   searchTerm: string;
   filters:{
-    searchBar:string
+    searchBar:string,
+    rate:number,
   }
 }
 
@@ -36,6 +39,7 @@ const initialState: initialStateInterface = {
   searchTerm: "",
   filters: {
     searchBar : "",
+    rate:0,
   },
 };
 
@@ -77,8 +81,12 @@ const JewelleryFilterDataProvider = ({
     dispatch({ type: "SET_QUERY", payload: { name, value } });
   };
 
+  const handleRatingCollectionFun=(i:number)=>{
+    dispatch({type:'FILTER_RATING', payload:i})
+  }
 useEffect(()=>{
      dispatch({ type: "SEARCH_PRODUCT" });
+     dispatch({type:'FILTER_BY_RATING_COLLECTION'})
 
 }, [myJewelleryData,state.filters,])
 
@@ -100,7 +108,8 @@ useEffect(()=>{
         searchTerm: state.searchTerm,
         dispatch,
         filters:state.filters,
-        handleSearch
+        handleSearch,
+        handleRatingCollectionFun
 
       }}
     >
