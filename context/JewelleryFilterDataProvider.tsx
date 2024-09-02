@@ -3,7 +3,7 @@ import React, { createContext, useContext, useEffect, useReducer } from "react";
 import FilterReducer from "./reducer/FilterReducer";
 import { useGlobalJewelleryPaginationContext } from "./JewelleryPaginationProvider";
 import { JewelleryItem } from "@/utils/interface";
-
+import { FilterAction } from "./reducer/FilterReducer";
 interface FilterDataInterface {
   filter_Products: JewelleryItem[] | undefined;
   all_Products: JewelleryItem[] | undefined;
@@ -12,7 +12,11 @@ interface FilterDataInterface {
   setListView: () => void;
   handleSelectionChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   searchTerm: string;
-
+  dispatch: React.Dispatch<FilterAction>;
+  filters: {
+    searchBar: string;
+  };
+  handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface initialStateInterface {
@@ -20,6 +24,9 @@ export interface initialStateInterface {
   all_Products: JewelleryItem[] | undefined;
   Grid_View: boolean;
   searchTerm: string;
+  filters:{
+    searchBar:string
+  }
 }
 
 const initialState: initialStateInterface = {
@@ -27,6 +34,9 @@ const initialState: initialStateInterface = {
   all_Products: [],
   Grid_View: true,
   searchTerm: "",
+  filters: {
+    searchBar : "",
+  },
 };
 
 const FilterDataContext = createContext<FilterDataInterface | undefined>(
@@ -54,22 +64,23 @@ const JewelleryFilterDataProvider = ({
 
 
 
-  const handleSelectionChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
+  const handleSelectionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const userValue = event.target.value;
     dispatch({ type: "SEARCH_DATA", payload: userValue });
     dispatch({ type: "SORT_FILTER_DATA", payload: userValue as any });
   };
 
-  // useEffect(() => {
-  //   if (state.searchTerm && myJewelleryData && myJewelleryData.length > 0) {
-  //     dispatch({
-  //       type: "FILTER_PRODUCTS_BY_SEARCH_TERM",
-  //       payload: { searchTerm: state.searchTerm, data: myJewelleryData },
-  //     });
-  //   }
-  // }, [state.searchTerm, myJewelleryData]);
+
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    dispatch({ type: "SET_QUERY", payload: { name, value } });
+  };
+
+useEffect(()=>{
+     dispatch({ type: "SEARCH_PRODUCT" });
+
+}, [myJewelleryData,state.filters,])
 
   useEffect(() => {
     if (myJewelleryData && myJewelleryData.length > 0) {
@@ -87,6 +98,9 @@ const JewelleryFilterDataProvider = ({
         setListView,
         handleSelectionChange,
         searchTerm: state.searchTerm,
+        dispatch,
+        filters:state.filters,
+        handleSearch
 
       }}
     >

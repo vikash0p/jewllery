@@ -13,13 +13,17 @@ import ListViewCard from "./ListViewCard";
 import ListViewCardSkeleton from "../loadingdata/ListViewCardSkeleton";
 
 const ProductCollection = () => {
-  const { isLoading, isError, data, error } = useGlobalJewelleryPaginationContext();
+  const { isLoading, isError, data, error } =
+    useGlobalJewelleryPaginationContext();
 
-  const{filter_Products,Grid_View,setGridView,setListView}=useGlobalFilterDataContext();
+  const { filter_Products, Grid_View, setGridView, setListView } =
+    useGlobalFilterDataContext();
 
-  const totalJewelleryData=data?.jewelleryList
+  const totalJewelleryData = data?.jewelleryList;
 
-  const [jewelleryData, setJewelleryData] = useState<JewelleryItem[]  | undefined  >(data?.jewelleryList);
+  const [jewelleryData, setJewelleryData] = useState<
+    JewelleryItem[] | undefined
+  >(data?.jewelleryList);
   // console.log("🚀 ~ file: ProductCollection.tsx:18 ~ jewelleryData:", jewelleryData);
 
   if (isError) {
@@ -43,12 +47,16 @@ const ProductCollection = () => {
           <div className="flex gap-4 cursor-pointer">
             <IoGridSharp
               size={30}
-              className={`text-orange-400 ${Grid_View === true ? "text-orange-700": ""}`}
+              className={`text-orange-400 ${
+                Grid_View === true ? "text-orange-700" : ""
+              }`}
               onClick={setGridView}
             />
             <IoReorderThreeOutline
               size={30}
-              className={`bg-orange-400 text-white ${Grid_View === false ? "bg-orange-700": ""}`}
+              className={`bg-orange-400 text-white ${
+                Grid_View === false ? "bg-orange-700" : ""
+              }`}
               onClick={setListView}
             />
           </div>
@@ -71,13 +79,23 @@ const ProductCollection = () => {
                 <LoadingProductCollection />
               ) : (
                 <div>
-                  <div className="container grid grid-cols-1 gap-5 pb-10 m-auto md:grid-cols-2 lg:grid-cols-3">
-                    {filter_Products?.map((value: JewelleryItem) => (
-                      <ProductCard value={value} key={value._id} />
-                    ))}
-                  </div>
+                  {filter_Products && filter_Products.length > 0 ? (
+                    <div>
+                      <div className="container grid grid-cols-1 gap-5 pb-10 m-auto md:grid-cols-2 lg:grid-cols-3">
+                        {filter_Products?.map((value: JewelleryItem) => (
+                          <ProductCard value={value} key={value._id} />
+                        ))}
+                      </div>
 
-                  {totalPages > 1 && <PaginationCollectionpage />}
+                      {totalPages > 1 && <PaginationCollectionpage />}
+                    </div>
+                  ) : (
+                    <div className="w-full min-h-screen flex flex-col justify-center items-center">
+                      <h5 className="text-2xl md:text-3xl ">
+                        Product Not found!{" "}
+                      </h5>
+                    </div>
+                  )}
                 </div>
               ))}
           </div>
@@ -89,13 +107,23 @@ const ProductCollection = () => {
                   <ListViewCardSkeleton />
                 ) : (
                   <div>
-                    <div className="container grid grid-cols-1 gap-5 pb-10 m-auto  ">
-                      {filter_Products?.map((value: JewelleryItem) => (
-                        <ListViewCard value={value} key={value._id} />
-                      ))}
-                    </div>
+                    {filter_Products && filter_Products.length > 0 ? (
+                      <div>
+                        <div className="container grid grid-cols-1 gap-5 pb-10 m-auto  ">
+                          {filter_Products?.map((value: JewelleryItem) => (
+                            <ListViewCard value={value} key={value._id} />
+                          ))}
+                        </div>
 
-                    {totalPages > 1 && <PaginationCollectionpage />}
+                        {totalPages > 1 && <PaginationCollectionpage />}
+                      </div>
+                    ) : (
+                      <div className="w-full min-h-screen flex flex-col justify-center items-center">
+                        <h5 className="text-2xl md:text-3xl ">
+                          Product Not found!
+                        </h5>
+                      </div>
+                    )}
                   </div>
                 ))}
             </div>

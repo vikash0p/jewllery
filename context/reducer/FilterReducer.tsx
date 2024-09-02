@@ -32,15 +32,26 @@ interface SortFilterDataAction {
   payload: "Ascending" | "Descending" | "PriceLowToHigh" | "PriceHighToLow";
 }
 
+interface searchFilter {
+  type: "SET_QUERY";
+  payload:{
+    name:string;
+    value:string,
+  };
+}
 
-
-type FilterAction =
-  | LoadFilterDataAction
-  | SetGridViewAction
-  | SetListViewAction
-  | SearchDataAction
-  | SortFilterDataAction
-  | UpdateSearchTermAction
+interface searchProduct {
+  type: "SEARCH_PRODUCT";
+}
+ export type FilterAction =
+   | LoadFilterDataAction
+   | SetGridViewAction
+   | SetListViewAction
+   | SearchDataAction
+   | SortFilterDataAction
+   | UpdateSearchTermAction
+   | searchFilter
+   | searchProduct;
 
 const FilterReducer = (
   state: initialStateInterface,
@@ -93,16 +104,35 @@ const FilterReducer = (
         ...state,
         filter_Products: sortedData,
       };
-    // case "FILTER_PRODUCTS_BY_SEARCH_TERM":
-    //   const filteredProducts = action.payload.data.filter((item) =>
-    //     item.name
-    //       .toLowerCase()
-    //       .includes(action.payload.searchTerm.toLowerCase())
-    //   );
-    //   return {
-    //     ...state,
-    //     filter_Products: filteredProducts,
-    //   };
+
+    case "SET_QUERY":
+      const { name, value } = action.payload;
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          [name]: value,
+        },
+      };
+      case 'SEARCH_PRODUCT':
+        const {all_Products,filters:{searchBar}}=state;
+        let tempProduct=all_Products ? [...all_Products] :[];
+
+        if (searchBar) {
+          tempProduct = tempProduct.filter(
+            (item) =>
+              searchBar == "" ? item  :
+              item.name.toLowerCase().includes(searchBar.toLowerCase()) ||
+              item.category.toLowerCase().includes(searchBar.toLowerCase())
+          );
+        }
+
+
+        return{
+          ...state,
+          filter_Products :tempProduct,
+        }
+
     default:
       return state;
   }

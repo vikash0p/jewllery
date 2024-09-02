@@ -1,20 +1,19 @@
 "use client";
 
-const CollectionSearchBar = () => {
+import { useGlobalFilterDataContext } from "@/context/JewelleryFilterDataProvider";
 
+const CollectionSearchBar:React.FC = () => {
+  const {filters:{searchBar},handleSearch}=useGlobalFilterDataContext();
+  console.log("🚀 ~ file: CollectionSearchBar.tsx:7 ~ searchBar:", searchBar);
 
-
-
-
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
 
 
 
   return (
     <form
-      onSubmit={handleFormSubmit}
+      onSubmit={(event: React.FormEvent<HTMLFormElement>) =>
+        event.preventDefault()
+      }
       aria-label="Search for jewellery products"
     >
       <label htmlFor="searchBar" className="sr-only">
@@ -22,12 +21,12 @@ const CollectionSearchBar = () => {
       </label>
       <input
         type="text"
-        name="searchbar"
+        name="searchBar"
         id="searchBar"
         className="border border-orange-500 px-3 max-w-sm md:w-96 py-2 placeholder:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
         placeholder="Jewellery Products..."
-        value={""}
-        // onChange={}
+        value={searchBar}
+        onChange={handleSearch}
         aria-describedby="searchBarDesc"
       />
       <button
