@@ -17,7 +17,7 @@ const CollectionRating: React.FC = () => {
 
   return (
     <div>
-      <h5 className="text-xl font-bold">Rating</h5>
+      <h5 className="text-xl font-bold py-3">Rating</h5>
       <div className="flex flex-row cursor-pointer">
         {Array.from({ length: 5 }).map((_, i) => (
           <div key={i}>
