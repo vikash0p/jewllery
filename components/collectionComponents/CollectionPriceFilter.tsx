@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const CollectionPriceFilter: React.FC = () => {
   const {filters: { range }, handleSearch, handlePriceSearch, all_Products,} = useGlobalFilterDataContext();
-  console.log("🚀 ~ file: CollectionPriceFilter.tsx:6 ~ range:", range);
+  // console.log("🚀 ~ file: CollectionPriceFilter.tsx:6 ~ range:", range);
 
   // Ensure all_Products is not undefined and has price property
   const prices = all_Products?.map((product) => product.price) || [];
@@ -29,7 +29,7 @@ const CollectionPriceFilter: React.FC = () => {
   // };
 
   return (
-    <div className="w-full border border-red-600">
+    <div className="w-full ">
       <label htmlFor="price-slider" className="text-xl font-bold">
          Price Range
       </label>

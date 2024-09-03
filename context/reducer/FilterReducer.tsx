@@ -61,6 +61,9 @@ interface SET_PRICE_SEARCH {
   payload: { name: string; value: number };
 }
 
+interface CLEAR_ALL_FILTER_COLLECTION {
+  type: "CLEAR_ALL_FILTER_COLLECTION";
+}
 export type FilterAction =
   | LoadFilterDataAction
   | SetGridViewAction
@@ -73,7 +76,8 @@ export type FilterAction =
   | filterByRatingProduct
   | filterRating
   | FILTER_BY_CATEGORY_COLLECTION
-  | SET_PRICE_SEARCH;
+  | SET_PRICE_SEARCH
+  | CLEAR_ALL_FILTER_COLLECTION;
 
 const FilterReducer = (
   state: initialStateInterface,
@@ -171,7 +175,9 @@ const FilterReducer = (
         tempProduct=tempProduct.filter((value)=>Number(value.price) >= range)
       }
 
-
+ if (rate) {
+   tempProduct = tempProduct.filter( (value) => Math.trunc(value.rating) === rate);
+ }
       return {
         ...state,
         filter_Products: tempProduct,
@@ -186,18 +192,6 @@ const FilterReducer = (
         },
       };
 
-    case "FILTER_BY_RATING_COLLECTION":
-      let tempRatingCollection = all_Products ? [...all_Products] : [];
-      if (rate) {
-        tempRatingCollection = tempRatingCollection.filter(
-          (value) => Math.trunc(value.rating) === rate
-        );
-      }
-
-      return {
-        ...state,
-        filter_Products: tempRatingCollection,
-      };
 
     case "FILTER_BY_CATEGORY_COLLECTION":
       let tempCategoryCollection = all_Products ? [...all_Products] : [];
@@ -212,6 +206,11 @@ const FilterReducer = (
         filter_Products: tempCategoryCollection,
       };
 
+      case "CLEAR_ALL_FILTER_COLLECTION":
+        return{
+          ...state,
+          filter_Products :all_Products,
+        }
     default:
       return state;
   }

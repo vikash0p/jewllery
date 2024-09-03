@@ -22,6 +22,7 @@ interface FilterDataInterface {
   handlePriceSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleRatingCollectionFun: (i: number) => void;
   hadleFilterCategoryFunction: (cat: string) => void;
+  FilterAllClearCollection:()=>void;
 }
 
 export interface initialStateInterface {
@@ -100,15 +101,17 @@ const handlePriceSearch=(event:React.ChangeEvent<HTMLInputElement>)=>{
   const handleRatingCollectionFun = (i: number) => {
     dispatch({ type: "FILTER_RATING", payload: i });
   };
-  useEffect(() => {
-    dispatch({ type: "FILTER_BY_RATING_COLLECTION" });
-  }, [myJewelleryData, state.filters]);
+
 
 
 useEffect(() => {
     dispatch({ type: "SEARCH_PRODUCT" });
 
 }, [myJewelleryData,state.filters]);
+
+const FilterAllClearCollection=()=>{
+  dispatch({type:'CLEAR_ALL_FILTER_COLLECTION'})
+}
 
   useEffect(() => {
     if (myJewelleryData && myJewelleryData.length > 0) {
@@ -132,6 +135,7 @@ useEffect(() => {
         handleRatingCollectionFun,
         hadleFilterCategoryFunction,
         handlePriceSearch,
+        FilterAllClearCollection
       }}
     >
       {children}

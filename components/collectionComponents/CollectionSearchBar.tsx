@@ -4,7 +4,7 @@ import { useGlobalFilterDataContext } from "@/context/JewelleryFilterDataProvide
 
 const CollectionSearchBar:React.FC = () => {
   const {filters:{searchBar},handleSearch}=useGlobalFilterDataContext();
-  console.log("🚀 ~ file: CollectionSearchBar.tsx:7 ~ searchBar:", searchBar);
+  // console.log("🚀 ~ file: CollectionSearchBar.tsx:7 ~ searchBar:", searchBar);
 
 
 

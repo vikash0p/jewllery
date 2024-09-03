@@ -8,7 +8,7 @@ const CollectionRating: React.FC = () => {
     filters: { rate },
     handleRatingCollectionFun,
   } = useGlobalFilterDataContext();
-    console.log("🚀 ~ file: CollectionRating.tsx:9 ~ rate:", rate);
+    // console.log("🚀 ~ file: CollectionRating.tsx:9 ~ rate:", rate);
 
 
   const handleStarClick = (index: number) => {

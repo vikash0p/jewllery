@@ -1,10 +1,13 @@
 "use client";
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { useGlobalFilterDataContext } from "@/context/JewelleryFilterDataProvider";
 import { JewelleryItem } from "@/utils/interface";
-import CollectionCategory from "./CollectionCategory";
-import CollectionRating from "./CollectionRating";
-import CollectionPriceFilter from "./CollectionPriceFilter";
+
+// Lazy load the components
+const CollectionCategory = lazy(() => import("./CollectionCategory"));
+const CollectionRating = lazy(() => import("./CollectionRating"));
+const CollectionPriceFilter = lazy(() => import("./CollectionPriceFilter"));
+const CollectionClearFilter = lazy(() => import("./CollectionClearFilter"));
 
 const CollectionFilterData: React.FC = () => {
   const { all_Products } = useGlobalFilterDataContext();
@@ -15,7 +18,9 @@ const CollectionFilterData: React.FC = () => {
   ): string[] => {
     if (!products) return [];
 
-    const newFilterData = Array.from( new Set(products.map((value) => value[key] as string)));
+    const newFilterData = Array.from(
+      new Set(products.map((value) => value[key] as string))
+    );
     return newFilterData;
   };
 
@@ -27,12 +32,22 @@ const CollectionFilterData: React.FC = () => {
     <div className="space-y-8">
       <div>
         <CollectionCategory cat={uniqueCategory} />
+
       </div>
       <div>
-        <CollectionRating />
+        <Suspense fallback={<div>Loading...</div>}>
+          <CollectionRating />
+        </Suspense>
       </div>
       <div>
-        <CollectionPriceFilter />
+        <Suspense fallback={<div>Loading...</div>}>
+          <CollectionPriceFilter />
+        </Suspense>
+      </div>
+      <div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <CollectionClearFilter />
+        </Suspense>
       </div>
     </div>
   );
