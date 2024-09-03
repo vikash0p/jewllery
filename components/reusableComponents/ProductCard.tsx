@@ -1,10 +1,13 @@
+'use client'
 import { JewelleryItem } from '@/utils/interface'
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import Review from './Review';
+import { useGlobalCartContext } from '@/context/Global/GlobalCartContext';
 
 const ProductCard = ({value}:{value:JewelleryItem}) => {
+  const {dispatch}=useGlobalCartContext();
      const discountedPrice = value.price - value.price * (20 / 100);
   return (
     <div className="max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg ">
@@ -48,10 +51,9 @@ const ProductCard = ({value}:{value:JewelleryItem}) => {
           </div>
         </div>
       </Link>
-      <div className="my-4 px-4">
-        <button className={`w-full px-4 py-2   ${value.inStock=== true ? "bg-primary  hover:bg-hoverColor transition-colors ":"bg-red-500 cursor-not-allowed "}`}>
-          Add to Cart
-        </button>
+      <div className="my-4 px-4 w-full ">
+        <Link href={`/collection/${value._id}`} className='w-full px-4 bg-primary block text-center py-2 font-semibold' >View Collection</Link>
+
       </div>
     </div>
   );

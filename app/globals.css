@@ -60,16 +60,12 @@
   }
 }
 
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  .one{
-    color: #000000;
-  }
-
+@layer components {
+.centerdiv{
+  @apply flex justify-center items-center w-full min-h-screen
+}
+  /* ... */
+}
 
 /* HTML: <div class="loader"></div> */
 .loader {
@@ -102,6 +98,3 @@
 }
 
 
-/* .myclass{
-  color: #ea580c !important;
-} */

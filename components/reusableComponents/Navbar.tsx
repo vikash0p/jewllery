@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Search, UserRound, ShoppingCart } from "lucide-react";
+import { useGlobalCartContext } from "@/context/Global/GlobalCartContext";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
    const pathname = usePathname();
+   const {state}=useGlobalCartContext();
 
   const links = [
     { name: "Home", path: "/" },
@@ -95,7 +97,7 @@ const Navbar = () => {
               <Link href="/cart" className="relative flex items-center hover:text-primary">
                 <ShoppingCart size={25} />
                 <span className="absolute flex items-center justify-center w-5 h-5 text-xs font-bold text-white rounded-full -top-2 -right-2 bg-primary">
-                  3
+                  {state.cart.length || 0}
                 </span>
               </Link>
             </div>

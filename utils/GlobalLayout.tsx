@@ -8,7 +8,11 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { JewelleryProvider } from "@/context/JewelleryProvider";
 import { JewelleryPaginationProvider } from "@/context/JewelleryPaginationProvider";
 import JewelleryFilterDataProvider from "@/context/JewelleryFilterDataProvider";
+import CartCollectionProvider from "@/context/CartCollectionProvider";
 const queryClient = new QueryClient();
+
+  import { ToastContainer } from "react-toastify";
+  import "react-toastify/dist/ReactToastify.css";
 
 const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -16,13 +20,15 @@ const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
       <JewelleryProvider>
         <JewelleryPaginationProvider>
           <JewelleryFilterDataProvider>
-            <Navbar />
-            <main>{children} </main>
-            <Footer />
+            <CartCollectionProvider>
+              <Navbar />
+              <main>{children} </main>
+              <Footer />
+            </CartCollectionProvider>
           </JewelleryFilterDataProvider>
         </JewelleryPaginationProvider>
       </JewelleryProvider>
-
+<ToastContainer />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

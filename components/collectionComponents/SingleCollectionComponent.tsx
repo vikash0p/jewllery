@@ -1,58 +1,56 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { JewelleryItem } from "@/utils/interface";
 import { useQuery } from "@tanstack/react-query";
 import { getSingleJewelleryData } from "@/utils/FetchDataFromBackend";
 import Image from "next/image";
+import LoadingSingleCollectionComponent from "../loadingdata/LoadingSingleCollectionComponent";
+import { SingleCollectionComponentProps } from "./interface";
+import { toastError, toastInfo, toastSuccess } from "@/utils/React-toastify";
+import { useGlobalCartContext } from "@/context/Global/GlobalCartContext";
 
-interface SingleCollectionComponentProps {
-  id: string;
-}
 
-const SingleCollectionComponent: React.FC<SingleCollectionComponentProps> = ({
-  id,
-}) => {
+const SingleCollectionComponent: React.FC<SingleCollectionComponentProps> = ({id}) => {
+
   const { isLoading, isError, data, error } = useQuery<JewelleryItem, Error>({
     queryKey: ["jewellery", id],
     queryFn: () => getSingleJewelleryData(id),
   });
+  const{dispatch}=useGlobalCartContext();
 
+  const [productSize,setProductSize]=useState<string>("");
+
+  console.log("🚀 ~ file: SingleCollectionComponent.tsx:19 ~ productSize:", productSize);
+
+  const cartHandler=(data:JewelleryItem)=>{
+    if (productSize === "") {
+      toastInfo("Please Select the size!");
+    }else{
+      dispatch({type:'ADD_ITEM',payload:{
+        id:data._id,
+        name:data.name,
+        price:data.price,
+        imageUrl:data.imageUrl,
+        size:productSize,
+        quantity:1,
+
+      }})
+      toastSuccess("Add to cart successfully!");
+
+    }
+
+  }
   if (isLoading) {
-    return (
-      <div className="py-20 bg-gray-100">
-        <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
-          <div className="flex flex-col -mx-4 md:flex-row animate-pulse">
-            <div className="px-4 md:flex-1">
-              <div className="h-[460px] bg-gray-300 mb-4 rounded-lg"></div>
-              <div className="flex mb-4 -mx-2">
-                <div className="w-1/2 h-10 px-2 bg-gray-300 rounded-full"></div>
-                <div className="w-1/2 h-10 px-2 bg-gray-300 rounded-full"></div>
-              </div>
-            </div>
-            <div className="px-4 md:flex-1">
-              <div className="h-8 mb-4 bg-gray-300 rounded"></div>
-              <div className="h-6 mb-4 bg-gray-300 rounded"></div>
-              <div className="flex mb-4">
-                <div className="w-1/3 h-6 mr-4 bg-gray-300 rounded"></div>
-                <div className="w-1/4 h-6 bg-gray-300 rounded"></div>
-              </div>
-
-              <div className="h-6 mb-4 bg-gray-300 rounded"></div>
-              <div className="h-20 bg-gray-300 rounded"></div>
-
-              <div className="h-40 bg-gray-300 rounded"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+    return <LoadingSingleCollectionComponent />;
   }
 
   if (isError) {
-    return <div>Error: {error?.message || "An error occurred"}</div>;
+    return <div className="centerdiv">Error: {error?.message || "An error occurred"}</div>;
   }
 
-  if (!data) return <></>;
+  if (!data) {
+    return <div className="centerdiv">No data available</div>;
+  }
 
   return (
     <div className="py-20 bg-gray-100">
@@ -72,12 +70,20 @@ const SingleCollectionComponent: React.FC<SingleCollectionComponentProps> = ({
             </div>
             <div className="flex pt-8 mb-4 -mx-2">
               <div className="w-1/2 px-2">
-                <button className="w-full px-4 py-2 font-bold  bg-primary  hover:bg-hoverColor">
+                <button
+                  type="button"
+                  onClick={() => cartHandler(data)}
+                  className={`w-full px-4 py-2 font-bold  ${
+                    data.inStock === true
+                      ? "bg-primary hover:bg-hoverColor"
+                      : "bg-red-700 cursor-not-allowed"
+                  }`}
+                >
                   Add to Cart
                 </button>
               </div>
               <div className="w-1/2 px-2">
-                <button className="w-full px-4 py-2 font-bold  bg-primary  hover:bg-hoverColor">
+                <button className="w-full px-4 py-2 font-bold bg-primary hover:bg-hoverColor">
                   Add to Wishlist
                 </button>
               </div>
@@ -111,10 +117,18 @@ const SingleCollectionComponent: React.FC<SingleCollectionComponentProps> = ({
             <div className="mb-4">
               <span className="font-bold text-gray-700">Select Size:</span>
               <div className="flex items-center mt-2">
-                {data?.sizes.map((size) => (
+                {data.sizes.map((size, index) => (
                   <button
+                    type="button"
+                    onClick={() => {
+                      setProductSize(size);
+                    }}
                     key={size}
-                    className="px-4 py-2 mr-2 font-bold text-gray-700 bg-gray-300 rounded-full hover:bg-gray-400"
+                    className={`px-4 py-2 mr-2 font-bold  rounded-full  ${
+                      productSize === size
+                        ? "bg-black text-white hover:bg-black"
+                        : "bg-primary hover:bg-hoverColor "
+                    }`}
                   >
                     {size}
                   </button>
