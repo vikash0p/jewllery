@@ -15,7 +15,7 @@ const DiscountMiddlePage = () => {
           <div>
             <LinkContainer
               href="/collection"
-              className="px-8 py-2 uppercase bg-orange-400"
+              className="px-8 py-2 uppercase bg-primary"
               linkName='SHOP NOW'
             />
           </div>

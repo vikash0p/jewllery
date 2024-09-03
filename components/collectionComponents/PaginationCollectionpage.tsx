@@ -24,7 +24,7 @@ export function PaginationCollectionpage() {
     }
   }, [searchParams, setPage]);
 
-  if (!data) return null; 
+  if (!data) return null;
 
   const totalPages = data.totalPages || 1;
 
@@ -63,7 +63,7 @@ export function PaginationCollectionpage() {
             <PaginationLink
               href={`/collection?page=${i + 1}`}
               className={`cursor-pointer ${
-                page === i + 1 ? "bg-orange-500" : ""
+                page === i + 1 ? "bg-primary" : ""
               }`}
               onClick={() => {
                 setPage(i + 1);

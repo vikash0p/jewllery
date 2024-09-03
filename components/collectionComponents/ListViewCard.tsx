@@ -52,7 +52,7 @@ const ListViewCard = ({ value }: { value: JewelleryItem }) => {
           <Review star={value.rating} /> {value.reviews} reviews
         </div>
         <div className="mt-4 ">
-          <button className=" px-4 py-2  text-white bg-orange-400 rounded hover:bg-orange-600">
+          <button className=" px-4 py-2  text-white bg-primary rounded hover:bg-hoverColor">
             Add to Cart
           </button>
         </div>

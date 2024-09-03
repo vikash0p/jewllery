@@ -22,7 +22,7 @@ const DiscountPage: React.FC = () => {
             <LinkContainer
               href={banner.linkUrl}
               linkName={banner.linkText}
-              className="inline-block px-6 py-2 text-sm transition-colors bg-orange-400  hover:bg-orange-500"
+              className="inline-block px-6 py-2 text-sm transition-colors bg-primary  hover:bg-primary"
             />
 
           </div>

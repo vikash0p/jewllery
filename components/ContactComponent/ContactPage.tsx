@@ -110,7 +110,7 @@ const ContactPage: React.FC = () => {
                 onChange={handleInputChange}
               ></textarea>
             </div>
-            <button className="w-full p-2 text-white transition bg-orange-400 rounded hover:bg-orange-500">
+            <button className="w-full p-2 text-white transition bg-primary rounded hover:bg-primary">
               Send Message
             </button>
           </form>

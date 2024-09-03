@@ -42,7 +42,7 @@ const CollectionPriceFilter: React.FC = () => {
         step={100}
         value={range}
         onChange={handlePriceSearch}
-        className="w-3/4 h-2 accent-black rounded-lg appearance-none cursor-pointer bg-orange-400"
+        className="w-3/4 h-2 accent-black rounded-lg appearance-none cursor-pointer bg-primary"
         aria-valuemin={minPrice}
         aria-valuemax={maxPrice}
         aria-valuenow={range}

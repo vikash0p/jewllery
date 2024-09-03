@@ -49,7 +49,7 @@ const ProductCard = ({value}:{value:JewelleryItem}) => {
         </div>
       </Link>
       <div className="my-4 px-4">
-        <button className={`w-full px-4 py-2   ${value.inStock=== true ? "bg-orange-400  hover:bg-orange-600 transition-colors ":"bg-red-500 cursor-not-allowed "}`}>
+        <button className={`w-full px-4 py-2   ${value.inStock=== true ? "bg-primary  hover:bg-hoverColor transition-colors ":"bg-red-500 cursor-not-allowed "}`}>
           Add to Cart
         </button>
       </div>

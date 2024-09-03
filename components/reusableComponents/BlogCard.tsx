@@ -24,7 +24,7 @@ const BlogCard = ({ value }: { value: BlogPost }) => {
           sizes="(min-width: 1480px) 419px, (min-width: 1040px) 28.57vw, (min-width: 780px) calc(45.83vw - 20px), (min-width: 480px) 384px, calc(92.5vw - 42px)"
         />
 
-        <div className="absolute px-3 py-1  bg-orange-600 top-5 left-2">
+        <div className="absolute px-3 py-1  bg-hoverColor top-5 left-2">
           {value.date}
         </div>
       </div>

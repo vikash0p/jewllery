@@ -55,8 +55,8 @@ const ProductCollection = () => {
             />
             <IoReorderThreeOutline
               size={30}
-              className={`bg-orange-400 text-white ${
-                Grid_View === false ? "bg-orange-700" : ""
+              className={`bg-primary text-white ${
+                Grid_View === false ? "bg-hoverColor" : ""
               }`}
               onClick={setListView}
             />

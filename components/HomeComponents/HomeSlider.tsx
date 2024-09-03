@@ -34,7 +34,7 @@ export default function HomeSlider() {
                   <div>
                     <LinkContainer
                       href={slide.linkUrl}
-                      className="px-6 py-2 text-xl transition-colors bg-myColorOne hover:bg-myColorHoverOne"
+                      className="px-6 py-2 text-xl transition-colors bg-primary hover:bg-hoverColor"
                       linkName="SHOP NOW"
                     />
                   </div>

@@ -62,7 +62,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="text-black shadow-md bg-myColor py-3 sticky top-0 z-40">
+    <nav className="text-black shadow-md bg-gray-100 py-3 sticky top-0 z-40">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -76,8 +76,8 @@ const Navbar = () => {
               <Link
                 key={index}
                 href={link.path}
-                className={`hover:bg-myColorHoverOne px-5 py-2  uppercase ${
-                  pathname === link.path ? "bg-myColorOne" : ""
+                className={`hover:bg-primary px-5 py-2  uppercase ${
+                  pathname === link.path ? "bg-primary" : ""
                 }`}
               >
                 {link.name}
@@ -86,15 +86,15 @@ const Navbar = () => {
           </div>
           <div className="flex flex-row gap-4">
             <div className="">
-             <Link href={"/collection"} className="hover:text-orange-600">  <Search size={25} /></Link>
+             <Link href={"/collection"} className="hover:text-primary">  <Search size={25} /></Link>
             </div>
             <div className="">
               <UserRound size={25} />
             </div>
             <div className="">
-              <Link href="/cart" className="relative flex items-center hover:text-orange-600">
+              <Link href="/cart" className="relative flex items-center hover:text-primary">
                 <ShoppingCart size={25} />
-                <span className="absolute flex items-center justify-center w-5 h-5 text-xs font-bold text-white rounded-full -top-2 -right-2 bg-myColorHoverOne">
+                <span className="absolute flex items-center justify-center w-5 h-5 text-xs font-bold text-white rounded-full -top-2 -right-2 bg-primary">
                   3
                 </span>
               </Link>
@@ -118,14 +118,14 @@ const Navbar = () => {
         initial={false}
         animate={isOpen ? "open" : "closed"}
         variants={containerVariants}
-        className="overflow-hidden md:hidden bg-myColor"
+        className="overflow-hidden md:hidden "
       >
         <motion.div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {links.map((link, index) => (
             <motion.div key={index} variants={linkVariants}>
               <Link
                 href={link.path}
-                className="block px-3 py-2 text-base font-medium rounded-md hover:bg-myColorHover"
+                className="block px-3 py-2 text-base font-medium rounded-md hover:bg-primary"
               >
                 {link.name}
               </Link>

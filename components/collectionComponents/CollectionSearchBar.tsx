@@ -31,7 +31,7 @@ const CollectionSearchBar:React.FC = () => {
       />
       <button
         type="submit"
-        className="ml-2 bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 sr-only"
+        className="ml-2 bg-primary text-white py-2 px-4 rounded hover:bg-hoverColor focus:outline-none focus:ring-2 focus:ring-orange-500 sr-only"
       >
         Search
       </button>

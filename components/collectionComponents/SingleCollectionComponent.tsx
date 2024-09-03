@@ -72,12 +72,12 @@ const SingleCollectionComponent: React.FC<SingleCollectionComponentProps> = ({
             </div>
             <div className="flex pt-8 mb-4 -mx-2">
               <div className="w-1/2 px-2">
-                <button className="w-full px-4 py-2 font-bold  bg-orange-400  hover:bg-orange-600">
+                <button className="w-full px-4 py-2 font-bold  bg-primary  hover:bg-hoverColor">
                   Add to Cart
                 </button>
               </div>
               <div className="w-1/2 px-2">
-                <button className="w-full px-4 py-2 font-bold  bg-orange-400  hover:bg-orange-600">
+                <button className="w-full px-4 py-2 font-bold  bg-primary  hover:bg-hoverColor">
                   Add to Wishlist
                 </button>
               </div>
