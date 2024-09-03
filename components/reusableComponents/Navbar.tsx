@@ -92,12 +92,12 @@ const Navbar = () => {
               <UserRound size={25} />
             </div>
             <div className="">
-              <a href="/cart" className="relative flex items-center">
+              <Link href="/cart" className="relative flex items-center hover:text-orange-600">
                 <ShoppingCart size={25} />
                 <span className="absolute flex items-center justify-center w-5 h-5 text-xs font-bold text-white rounded-full -top-2 -right-2 bg-myColorHoverOne">
                   3
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
 
