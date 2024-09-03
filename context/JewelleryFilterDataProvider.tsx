@@ -15,10 +15,11 @@ interface FilterDataInterface {
   dispatch: React.Dispatch<FilterAction>;
   filters: {
     searchBar: string;
-    rate: number ;
+    rate: number;
   };
   handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleRatingCollectionFun:(i:number)=>void;
+  handleRatingCollectionFun: (i: number) => void;
+  hadleFilterCategoryFunction:(cat:string)=>void;
 }
 
 export interface initialStateInterface {
@@ -26,10 +27,11 @@ export interface initialStateInterface {
   all_Products: JewelleryItem[] | undefined;
   Grid_View: boolean;
   searchTerm: string;
-  filters:{
-    searchBar:string,
-    rate:number,
-  }
+  filters: {
+    searchBar: string;
+    rate: number;
+
+  };
 }
 
 const initialState: initialStateInterface = {
@@ -38,8 +40,9 @@ const initialState: initialStateInterface = {
   Grid_View: true,
   searchTerm: "",
   filters: {
-    searchBar : "",
-    rate:0,
+    searchBar: "",
+    rate: 0,
+
   },
 };
 
@@ -66,14 +69,13 @@ const JewelleryFilterDataProvider = ({
     dispatch({ type: "SET_LIST_VIEW" });
   };
 
-
-
-  const handleSelectionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleSelectionChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     const userValue = event.target.value;
     dispatch({ type: "SEARCH_DATA", payload: userValue });
     dispatch({ type: "SORT_FILTER_DATA", payload: userValue as any });
   };
-
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name;
@@ -81,14 +83,21 @@ const JewelleryFilterDataProvider = ({
     dispatch({ type: "SET_QUERY", payload: { name, value } });
   };
 
-  const handleRatingCollectionFun=(i:number)=>{
-    dispatch({type:'FILTER_RATING', payload:i})
+  const hadleFilterCategoryFunction=(cat:string)=>{
+        dispatch({type:"FILTER_BY_CATEGORY_COLLECTION",payload:cat  })
   }
-useEffect(()=>{
-     dispatch({ type: "SEARCH_PRODUCT" });
-     dispatch({type:'FILTER_BY_RATING_COLLECTION'})
+  const handleRatingCollectionFun = (i: number) => {
+    dispatch({ type: "FILTER_RATING", payload: i });
+  };
+  useEffect(() => {
+    dispatch({ type: "FILTER_BY_RATING_COLLECTION" });
+  }, [myJewelleryData, state.filters]);
 
-}, [myJewelleryData,state.filters,])
+  
+useEffect(() => {
+    dispatch({ type: "SEARCH_PRODUCT" });
+
+}, [myJewelleryData,state.filters.searchBar]);
 
   useEffect(() => {
     if (myJewelleryData && myJewelleryData.length > 0) {
@@ -107,16 +116,19 @@ useEffect(()=>{
         handleSelectionChange,
         searchTerm: state.searchTerm,
         dispatch,
-        filters:state.filters,
+        filters: state.filters,
         handleSearch,
-        handleRatingCollectionFun
-
+        handleRatingCollectionFun,
+        hadleFilterCategoryFunction,
       }}
     >
       {children}
     </FilterDataContext.Provider>
   );
 };
+
+
+
 
 export const useGlobalFilterDataContext = () => {
   const context = useContext(FilterDataContext);

@@ -24,6 +24,9 @@ const ProductCard = ({value}:{value:JewelleryItem}) => {
           <p className="mt-2 text-gray-600">
             {value.description.slice(0, 50)}...
           </p>
+          <p className="mt-2 ">
+          Category:  <span className='text-orange-400'>{value.category}</span>
+          </p>
           <div className="flex items-center justify-between mt-4">
             <div className="space-x-4">
               <span className="font-bold text-gray-700 ">

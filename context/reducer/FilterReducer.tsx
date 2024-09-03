@@ -52,6 +52,10 @@ interface filterRating {
   type: "FILTER_RATING";
   payload: number;
 }
+interface FILTER_BY_CATEGORY_COLLECTION {
+  type: "FILTER_BY_CATEGORY_COLLECTION";
+  payload: string;
+}
 
 export type FilterAction =
   | LoadFilterDataAction
@@ -63,14 +67,15 @@ export type FilterAction =
   | searchFilter
   | searchProduct
   | filterByRatingProduct
-  | filterRating;
+  | filterRating
+  | FILTER_BY_CATEGORY_COLLECTION;
 
 const FilterReducer = (
   state: initialStateInterface,
   action: FilterAction
 ): initialStateInterface => {
   const {
-    filters: { rate, searchBar },
+    filters: { rate, searchBar,  },
     all_Products,
     filter_Products,
   } = state;
@@ -173,6 +178,20 @@ const FilterReducer = (
       return {
         ...state,
         filter_Products: tempRatingCollection,
+      };
+
+    case "FILTER_BY_CATEGORY_COLLECTION":
+      let tempCategoryCollection = all_Products ? [...all_Products] : [];
+      if (action.payload) {
+        tempCategoryCollection = tempCategoryCollection.filter(
+          (item) => item.category.toLowerCase() === action.payload.toLowerCase()
+        );
+      }
+
+      return {
+        ...state,
+        filter_Products: tempCategoryCollection,
+
       };
 
     default:

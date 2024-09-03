@@ -14,9 +14,7 @@ const CollectionFilterData: React.FC = () => {
   ): string[] => {
     if (!products) return [];
 
-    const newFilterData = Array.from(
-      new Set(products.map((value) => value[key] as string))
-    );
+    const newFilterData = Array.from( new Set(products.map((value) => value[key] as string)));
     return newFilterData;
   };
 
