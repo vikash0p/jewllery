@@ -8,11 +8,7 @@ import { Navigation } from "swiper/modules";
 import { slides } from "@/utils/data";
 import { ImageContainer, LinkContainer } from "../reusableComponents";
 
-
-
 export default function HomeSlider() {
-  // Type the slides array with the Slide interface
-
   return (
     <>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
@@ -26,19 +22,19 @@ export default function HomeSlider() {
                 className="object-cover w-full h-full"
               />
               <div
-                className={`absolute flex flex-col    justify-center w-full h-full gap-2 ps-3 md:px-10 xl:ps-20 md:gap-3 lg:gap-4 xl:gap-5 ${
-                  index % 2 !== 0 ? "items-end   " : "items-start"
+                className={`absolute flex flex-col justify-center w-full h-full gap-2 ps-3 md:px-10 xl:ps-20 md:gap-3 lg:gap-4 xl:gap-5 ${
+                  index % 2 !== 0 ? "items-end" : "items-start"
                 }`}
               >
-                <div className=" space-y-4 p-5">
-                  <h1 className={`text-2xl font-bold lg:text-5xl `}>
+                <div className="space-y-4 p-5">
+                  <h1 className={`text-2xl font-bold lg:text-5xl`}>
                     {slide.heading}
                   </h1>
                   <p className="lg:text-xl">{slide.description}</p>
                   <div>
                     <LinkContainer
                       href={slide.linkUrl}
-                      className="px-6 py-2 text-xl transition-colors  bg-myColorOne hover:bg-myColorHoverOne"
+                      className="px-6 py-2 text-xl transition-colors bg-myColorOne hover:bg-myColorHoverOne"
                       linkName="SHOP NOW"
                     />
                   </div>
