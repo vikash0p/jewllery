@@ -31,14 +31,14 @@ export default function HomeSlider() {
                 }`}
               >
                 <div className=" space-y-4 p-5">
-                  <h4 className={`text-2xl font-bold lg:text-4x`}>
+                  <h2 className={`text-2xl font-bold lg:text-4xl`}>
                     {slide.heading}
-                  </h4>
+                  </h2>
                   <p className="lg:text-xl">{slide.description}</p>
                   <div>
                     <LinkContainer
                       href={slide.linkUrl}
-                      className="px-6 py-2 text-xl transition-colors rounded-sm bg-myColorOne hover:bg-myColorHoverOne"
+                      className="px-6 py-2 text-xl transition-colors  bg-myColorOne hover:bg-myColorHoverOne"
                       linkName="SHOP NOW"
                     />
                   </div>

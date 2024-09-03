@@ -49,7 +49,7 @@ const ProductCard = ({value}:{value:JewelleryItem}) => {
             {/* {value.rating} */}
           </div>
           <div className="mt-4">
-            <button className="w-full px-4 py-2 text-white bg-orange-400 rounded hover:bg-orange-600">
+            <button className="w-full px-4 py-2  bg-orange-400 rounded hover:bg-orange-600">
               Add to Cart
             </button>
           </div>

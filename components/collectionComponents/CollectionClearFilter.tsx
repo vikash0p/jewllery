@@ -8,7 +8,7 @@ const CollectionClearFilter = () => {
     <button
       type="button"
       onClick={FilterAllClearCollection}
-      className="uppercase px-8 py-2  bg-orange-500 font-bold text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-colors"
+      className="uppercase px-8 py-2  bg-orange-500  font-semibold  hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 transition-colors"
       aria-label="Clear all filters"
     >
       clear filters

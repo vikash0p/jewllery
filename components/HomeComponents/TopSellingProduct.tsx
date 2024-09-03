@@ -41,7 +41,7 @@ const TopSellingProduct = () => {
       <div className="space-x-10 text-center">
         <button
           className={`bg-orange-400 px-5 py-2 ${
-            index === 0 ? "bg-orange-600 text-white font-semibold" : ""
+            index === 0 ? "bg-orange-600  font-semibold" : ""
           }`}
           onClick={() => {
             setFilter("new");
@@ -52,7 +52,7 @@ const TopSellingProduct = () => {
         </button>
         <button
           className={`bg-orange-400 px-5 py-2 ${
-            index === 1 ? "bg-orange-600 text-white font-semibold" : ""
+            index === 1 ? "bg-orange-600  font-semibold" : ""
           }`}
           onClick={() => {
             setFilter("featured");
@@ -63,7 +63,7 @@ const TopSellingProduct = () => {
         </button>
         <button
           className={`bg-orange-400 px-5 py-2 ${
-            index === 2 ? "bg-orange-600 text-white font-semibold " : ""
+            index === 2 ? "bg-orange-600  font-semibold " : ""
           }`}
           onClick={() => {
             setFilter("best");
@@ -87,10 +87,9 @@ const TopSellingProduct = () => {
       <div className="w-full m-auto text-center">
         <Link
           href={"/collection"}
-          className="px-8 py-2 text-center bg-orange-400 "
+          className="px-8 py-3 font-semibold text-center bg-orange-400 "
         >
-          READ MORE
-        </Link>
+          Explore product        </Link>
       </div>
     </div>
   );
