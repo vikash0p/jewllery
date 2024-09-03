@@ -31,9 +31,9 @@ export default function HomeSlider() {
                 }`}
               >
                 <div className=" space-y-4 p-5">
-                  <h2 className={`text-2xl font-bold lg:text-4xl`}>
+                  <h1 className={`text-2xl font-bold lg:text-5xl `}>
                     {slide.heading}
-                  </h2>
+                  </h1>
                   <p className="lg:text-xl">{slide.description}</p>
                   <div>
                     <LinkContainer
