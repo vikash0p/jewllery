@@ -4,7 +4,7 @@ import { useGlobalFilterDataContext } from "@/context/JewelleryFilterDataProvide
 import { JewelleryItem } from "@/utils/interface";
 import CollectionCategory from "./CollectionCategory";
 import CollectionRating from "./CollectionRating";
-import { CollectionPriceFilter } from "./CollectionPriceFilter";
+import CollectionPriceFilter from "./CollectionPriceFilter";
 
 const CollectionFilterData: React.FC = () => {
   const { all_Products } = useGlobalFilterDataContext();

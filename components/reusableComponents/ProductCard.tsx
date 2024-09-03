@@ -30,9 +30,9 @@ const ProductCard = ({value}:{value:JewelleryItem}) => {
           <div className="flex items-center justify-between mt-4">
             <div className="space-x-4">
               <span className="font-bold text-gray-700 ">
-                ${discountedPrice.toFixed(2)}{" "}
+                ${value.price}{" "}
               </span>
-              <span className="text-gray-500 line-through">${value.price}</span>
+              {/* <span className="text-gray-500 line-through">${value.price}</span> */}
             </div>
             {value.inStock === true ? (
               <span className="px-2 py-1 text-xs font-semibold text-green-800 bg-green-200 rounded">

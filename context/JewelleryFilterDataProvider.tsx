@@ -16,10 +16,12 @@ interface FilterDataInterface {
   filters: {
     searchBar: string;
     rate: number;
+    range: number;
   };
   handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handlePriceSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleRatingCollectionFun: (i: number) => void;
-  hadleFilterCategoryFunction:(cat:string)=>void;
+  hadleFilterCategoryFunction: (cat: string) => void;
 }
 
 export interface initialStateInterface {
@@ -30,6 +32,7 @@ export interface initialStateInterface {
   filters: {
     searchBar: string;
     rate: number;
+    range:number;
 
   };
 }
@@ -42,6 +45,7 @@ const initialState: initialStateInterface = {
   filters: {
     searchBar: "",
     rate: 0,
+    range:0,
 
   },
 };
@@ -78,10 +82,17 @@ const JewelleryFilterDataProvider = ({
   };
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    dispatch({ type: "SET_QUERY", payload: { name, value } });
+          const name = event.target.name;
+          const value = event.target.value;
+          dispatch({ type: "SET_QUERY", payload: { name, value } });
+
   };
+const handlePriceSearch=(event:React.ChangeEvent<HTMLInputElement>)=>{
+      const name = event.target.name;
+      const value = Number(event.target.value);
+      dispatch({ type: "SET_PRICE_SEARCH", payload: { name, value } });
+
+}
 
   const hadleFilterCategoryFunction=(cat:string)=>{
         dispatch({type:"FILTER_BY_CATEGORY_COLLECTION",payload:cat  })
@@ -93,11 +104,11 @@ const JewelleryFilterDataProvider = ({
     dispatch({ type: "FILTER_BY_RATING_COLLECTION" });
   }, [myJewelleryData, state.filters]);
 
-  
+
 useEffect(() => {
     dispatch({ type: "SEARCH_PRODUCT" });
 
-}, [myJewelleryData,state.filters.searchBar]);
+}, [myJewelleryData,state.filters]);
 
   useEffect(() => {
     if (myJewelleryData && myJewelleryData.length > 0) {
@@ -120,6 +131,7 @@ useEffect(() => {
         handleSearch,
         handleRatingCollectionFun,
         hadleFilterCategoryFunction,
+        handlePriceSearch,
       }}
     >
       {children}

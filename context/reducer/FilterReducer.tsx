@@ -56,6 +56,10 @@ interface FILTER_BY_CATEGORY_COLLECTION {
   type: "FILTER_BY_CATEGORY_COLLECTION";
   payload: string;
 }
+interface SET_PRICE_SEARCH {
+  type: "SET_PRICE_SEARCH";
+  payload: { name: string; value: number };
+}
 
 export type FilterAction =
   | LoadFilterDataAction
@@ -68,14 +72,15 @@ export type FilterAction =
   | searchProduct
   | filterByRatingProduct
   | filterRating
-  | FILTER_BY_CATEGORY_COLLECTION;
+  | FILTER_BY_CATEGORY_COLLECTION
+  | SET_PRICE_SEARCH;
 
 const FilterReducer = (
   state: initialStateInterface,
   action: FilterAction
 ): initialStateInterface => {
   const {
-    filters: { rate, searchBar,  },
+    filters: { rate, searchBar,range },
     all_Products,
     filter_Products,
   } = state;
@@ -141,6 +146,15 @@ const FilterReducer = (
         },
       };
 
+      case "SET_PRICE_SEARCH":
+        return{
+          ...state,
+          filters:{
+            ...state.filters,
+            [action.payload.name]:action.payload.value
+          }
+
+        }
     case "SEARCH_PRODUCT":
       let tempProduct = all_Products ? [...all_Products] : [];
 
@@ -152,6 +166,11 @@ const FilterReducer = (
               item.category.toLowerCase().includes(searchBar.toLowerCase())
         );
       }
+
+      if(range){
+        tempProduct=tempProduct.filter((value)=>Number(value.price) >= range)
+      }
+
 
       return {
         ...state,
@@ -191,7 +210,6 @@ const FilterReducer = (
       return {
         ...state,
         filter_Products: tempCategoryCollection,
-
       };
 
     default:
