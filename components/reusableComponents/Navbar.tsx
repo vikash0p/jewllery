@@ -86,7 +86,7 @@ const Navbar = () => {
           </div>
           <div className="flex flex-row gap-4">
             <div className="">
-              <Search size={25} />{" "}
+             <Link href={"/collection"} className="hover:text-orange-600">  <Search size={25} /></Link>
             </div>
             <div className="">
               <UserRound size={25} />

@@ -39,7 +39,7 @@ const SingleCollectionComponent: React.FC<SingleCollectionComponentProps> = ({
 
               <div className="h-6 mb-4 bg-gray-300 rounded"></div>
               <div className="h-20 bg-gray-300 rounded"></div>
-              
+
               <div className="h-40 bg-gray-300 rounded"></div>
             </div>
           </div>
@@ -72,12 +72,12 @@ const SingleCollectionComponent: React.FC<SingleCollectionComponentProps> = ({
             </div>
             <div className="flex pt-8 mb-4 -mx-2">
               <div className="w-1/2 px-2">
-                <button className="w-full px-4 py-2 font-bold text-white bg-gray-900 rounded-full hover:bg-gray-800">
+                <button className="w-full px-4 py-2 font-bold  bg-orange-400  hover:bg-orange-600">
                   Add to Cart
                 </button>
               </div>
               <div className="w-1/2 px-2">
-                <button className="w-full px-4 py-2 font-bold text-gray-800 bg-gray-200 rounded-full hover:bg-gray-300">
+                <button className="w-full px-4 py-2 font-bold  bg-orange-400  hover:bg-orange-600">
                   Add to Wishlist
                 </button>
               </div>

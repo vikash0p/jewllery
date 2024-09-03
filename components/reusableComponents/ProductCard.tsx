@@ -25,21 +25,19 @@ const ProductCard = ({value}:{value:JewelleryItem}) => {
             {value.description.slice(0, 50)}...
           </p>
           <p className="mt-2 ">
-          Category:  <span className='text-orange-400'>{value.category}</span>
+            Category: <span className="text-black">{value.category}</span>
           </p>
           <div className="flex items-center justify-between mt-4">
             <div className="space-x-4">
-              <span className="font-bold text-gray-700 ">
-                ${value.price}{" "}
-              </span>
+              <span className="font-bold text-gray-700 ">${value.price} </span>
               {/* <span className="text-gray-500 line-through">${value.price}</span> */}
             </div>
             {value.inStock === true ? (
-              <span className="px-2 py-1 text-xs font-semibold text-green-800 bg-green-200 rounded">
+              <span className="px-2 py-1 text-xs font-semibold text-black bg-green-200 ">
                 In Stock
               </span>
             ) : (
-              <span className="px-2 py-1 text-xs font-semibold text-white bg-red-500 rounded">
+              <span className="px-2 py-1 text-xs font-semibold  bg-red-400 ">
                 Out of Stock
               </span>
             )}
@@ -48,13 +46,13 @@ const ProductCard = ({value}:{value:JewelleryItem}) => {
             <Review star={value.rating} /> {value.reviews} reviews
             {/* {value.rating} */}
           </div>
-          <div className="mt-4">
-            <button className="w-full px-4 py-2  bg-orange-400 rounded hover:bg-orange-600">
-              Add to Cart
-            </button>
-          </div>
         </div>
       </Link>
+      <div className="my-4 px-4">
+        <button className={`w-full px-4 py-2   ${value.inStock=== true ? "bg-orange-400  hover:bg-orange-600 transition-colors ":"bg-red-500 cursor-not-allowed "}`}>
+          Add to Cart
+        </button>
+      </div>
     </div>
   );
 }

@@ -43,8 +43,8 @@ const CollectionCategory = ({ cat }: { cat: string[] }) => {
           aria-label={`Select ${category} category`}
           className={`block py-1 ${
             activeIndex === index
-              ? "text-orange-400 font-semibold underline"
-              : "hover:text-orange-400"
+              ? " font-semibold underline"
+              : "hover:text-orange-600"
           }`}
         >
           {category}
