@@ -9,16 +9,16 @@ import { useGlobalJewelleryContext } from "@/context/JewelleryProvider";
 
 const FilterByCategory = () => {
   const { data, error, isError, isLoading } = useGlobalJewelleryContext();
+  console.log("🚀 ~ file: FilterByCategory.tsx:12 ~ data:", data?.totalItems);
 
-  // Step 1: Extract unique categories
+  // Extract unique categories
   const uniqueCategories = Array.from(
     new Set(
       data?.jewelleryList?.map((item: JewelleryItem) => item.category) || []
     )
   );
 
-  // console.log(uniqueCategories);
-  // Step 2: Get the first product in each category
+  // Get the first product in each category
   const firstProductInEachCategory = data?.jewelleryList?.reduce(
     (acc: Record<string, JewelleryItem>, item: JewelleryItem) => {
       if (!acc[item.category]) {
@@ -28,9 +28,8 @@ const FilterByCategory = () => {
     },
     {}
   );
-  // console.log(firstProductInEachCategory);
 
-  // Step 3: Count the number of products by category
+  // Count the number of products by category
   const productsByCategory = data?.jewelleryList?.reduce(
     (acc: Record<string, number>, item: JewelleryItem) => {
       if (acc[item.category]) {
@@ -43,46 +42,45 @@ const FilterByCategory = () => {
     {}
   );
 
-  // Skeleton loading component
-
   return (
-    <div>
-      <SubHeading sub="Shop by category" />
+    <div className="container mx-auto px-4 py-8">
+      <SubHeading sub="Shop by Category" />
       <div>
         {isLoading ? (
           <LoadingSkeleton />
         ) : (
-          <div className="flex flex-wrap justify-between gap-8 pt-8 m-auto max-w-7xl">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-6 pt-8">
             {/* Display first product in each category */}
             {firstProductInEachCategory &&
               Object.entries(firstProductInEachCategory).map(
                 ([category, product]) => (
-                  <div key={product._id} className="text-center">
+                  <div
+                    key={product._id}
+                    className="text-center md:bg-white rounded-lg shadow-lg md:shadow-gray-100 p-4 transform transition-transform hover:scale-105"
+                  >
                     <Link href={`/collection/category/${product.category}`}>
                       <Image
                         src={product.imageUrl}
                         alt={product.name}
-                        width={100}
-                        height={100}
+                        width={150}
+                        height={150}
                         priority
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover rounded-full cursor-pointer w-36 h-36"
+                        className="object-cover rounded-full cursor-pointer w-36 h-36 mx-auto"
                       />
                     </Link>
-                    <h2 className="mt-2 text-lg font-bold">{category}</h2>
+                    <h2 className="mt-4 text-xl font-semibold text-gray-800">
+                      {category}
+                    </h2>
+                    <p className="text-sm text-gray-500">
+                      {productsByCategory && productsByCategory[category]}{" "}
+                      products
+                    </p>
                   </div>
                 )
               )}
           </div>
         )}
-        <div className="flex flex-wrap justify-between gap-8 m-auto mt-4 max-w-7xl">
-          {productsByCategory &&
-            Object.entries(productsByCategory).map(([category, count]) => (
-              <div key={category} className="text-center px-7">
-                {count} products
-              </div>
-            ))}
-        </div>
       </div>
     </div>
   );
