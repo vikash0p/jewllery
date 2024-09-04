@@ -7,9 +7,20 @@ import { GrAdd, GrSubtract } from "react-icons/gr";
 import { addItemPayload } from "@/context/types/types";
 import { IoTrashBinSharp } from "react-icons/io5";
 import { toastSuccess } from "@/utils/React-toastify";
+import Link from "next/link";
+
 
 const CartShopping = () => {
   const { state, dispatch } = useGlobalCartContext();
+
+  if (state.cart.length === 0) {
+    return (
+      <div className="centerdiv text-4xl font-bold flex-col gap-8">
+        <h5>Your cart is empty</h5>
+<Link href={"/collection"} className="px-8 py-2 bg-primary">Collection</Link>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-gray-100 min-h-screen py-8">
@@ -48,13 +59,24 @@ const CartShopping = () => {
                       <td className="py-4">${item.price.toFixed(2)}</td>
                       <td className="py-4">
                         <div className="flex items-center">
-                          <button className="border rounded-md py-2 px-4 mr-2">
+                          <button
+                            className="border rounded-md py-2 px-4 mr-2"
+                            onClick={() => dispatch({ type: "DECREMENT_QTY",payload:item.size })}
+                          >
                             <GrSubtract />
                           </button>
                           <span className="text-center w-8">
                             {item.quantity}
                           </span>
-                          <button className="border rounded-md py-2 px-4 ml-2">
+                          <button
+                            className="border rounded-md py-2 px-4 ml-2"
+                            onClick={() =>
+                              dispatch({
+                                type: "INCREMENT_QTY",
+                                payload: item.size,
+                              })
+                            }
+                          >
                             <GrAdd />
                           </button>
                         </div>
@@ -62,10 +84,18 @@ const CartShopping = () => {
                       <td className="py-4">
                         ${(item.price * item.quantity).toFixed(2)}
                       </td>
-                      <td className="py-4"><button type="button" className="text-red-600" onClick={()=>{
-                        dispatch({ type: "REMOVE_ITEM", payload: item.id });
-                        toastSuccess("successfully remove item")
-                      }}><IoTrashBinSharp size={30} /></button></td>
+                      <td className="py-4">
+                        <button
+                          type="button"
+                          className="text-red-600"
+                          onClick={() => {
+                            dispatch({ type: "REMOVE_ITEM", payload: item.id });
+                            toastSuccess("successfully remove item");
+                          }}
+                        >
+                          <IoTrashBinSharp size={30} />
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>

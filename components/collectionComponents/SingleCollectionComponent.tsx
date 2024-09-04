@@ -78,6 +78,7 @@ const SingleCollectionComponent: React.FC<SingleCollectionComponentProps> = ({id
                       ? "bg-primary hover:bg-hoverColor"
                       : "bg-red-700 cursor-not-allowed"
                   }`}
+                  disabled={data.inStock===false}
                 >
                   Add to Cart
                 </button>

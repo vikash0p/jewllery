@@ -14,7 +14,6 @@ export const CartContext = createContext<CartContextType | undefined>(undefined)
 const CartCollectionProvider:FC<cartContextChildren> = ({ children }) => {
 
   const [state, dispatch] = useReducer(CartReducer, initialState);
-  console.log("🚀 ~ file: CartCollectionProvider.tsx:17 ~ state:", state.cart.length);
 
 
 
