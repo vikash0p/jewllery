@@ -60,11 +60,11 @@ const CartShopping = () => {
                       <td className="py-4">
                         <div className="flex items-center">
                           <button
-                            className="border rounded-md py-2 px-4 mr-2"
+                            className="border rounded-md py-2 px-4 mr-2 hover:border-primary hover:text-primary"
                             onClick={() =>
                               dispatch({
                                 type: "DECREMENT_QTY",
-                                payload: item.size,
+                                payload: item,
                               })
                             }
                           >
@@ -74,11 +74,11 @@ const CartShopping = () => {
                             {item.quantity}
                           </span>
                           <button
-                            className="border rounded-md py-2 px-4 ml-2"
+                            className="border rounded-md py-2 px-4 ml-2 hover:border-primary hover:text-primary transition-colors"
                             onClick={() =>
                               dispatch({
                                 type: "INCREMENT_QTY",
-                                payload: item.size,
+                                payload: item,
                               })
                             }
                           >

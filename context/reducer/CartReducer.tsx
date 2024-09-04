@@ -4,6 +4,12 @@ const CartReducer = (state: CartState, action: CartAction): CartState => {
   const { cart } = state;
 
   switch (action.type) {
+    case "INITIALIZE_CART": {
+      return {
+        ...state,
+        cart: action.payload || [],
+      };
+    }
     case "ADD_ITEM": {
       const existItem = cart.find((item) => item.id === action.payload.id);
       const existSize = cart.find((item) => item.size === action.payload.size);
@@ -40,7 +46,7 @@ const CartReducer = (state: CartState, action: CartAction): CartState => {
       return {
         ...state,
         cart: cart.map((item) =>
-          item.size === action.payload && item.quantity < 10
+          item.size === action.payload.size && item.id===action.payload.id && item.quantity < 10
             ? { ...item, quantity: item.quantity + 1 }
             : item
         ),
@@ -51,7 +57,7 @@ const CartReducer = (state: CartState, action: CartAction): CartState => {
       return {
         ...state,
         cart: cart.map((item) =>
-          item.size === action.payload && item.quantity > 1
+          item.size === action.payload.size && item.id===action.payload.id && item.quantity > 1
             ? { ...item, quantity: item.quantity - 1 }
             : item
         ),

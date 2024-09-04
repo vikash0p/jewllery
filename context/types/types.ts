@@ -1,7 +1,6 @@
-import { JewelleryItem } from "@/utils/interface";
-import { IdCard } from "lucide-react";
 import { Dispatch } from "react";
 
+// Define the payload for adding an item
 export type addItemPayload = {
   id: string;
   name: string;
@@ -11,8 +10,6 @@ export type addItemPayload = {
   quantity: number;
 };
 
-
-
 // Define the state type
 export type CartState = {
   cart: addItemPayload[];
@@ -20,11 +17,11 @@ export type CartState = {
 
 // Define action types
 export type CartAction =
-  | { type: "ADD_ITEM"; payload: addItemPayload }
-  | { type: "REMOVE_ITEM"; payload: addItemPayload }
-  | { type: "INCREMENT_QTY"; payload: string }
-  | { type: "DECREMENT_QTY"; payload: string }
-  | { type: "INITIALIZE_CART"; payload: addItemPayload[] };
+  | { type: "ADD_ITEM"; payload: addItemPayload } // Payload for adding an item
+  | { type: "REMOVE_ITEM"; payload: addItemPayload } // Payload is the item ID for removal
+  | { type: "INCREMENT_QTY"; payload: addItemPayload } // Payload is the item size for incrementing quantity
+  | { type: "DECREMENT_QTY"; payload: addItemPayload } // Payload is the item size for decrementing quantity
+  | { type: "INITIALIZE_CART"; payload: addItemPayload[] }; // Payload for initializing the cart
 
 // Define the context type
 export type CartContextType = {
@@ -32,8 +29,7 @@ export type CartContextType = {
   dispatch: Dispatch<CartAction>;
 };
 
-
-
+// Define the children prop type for the context provider component
 export type cartContextChildren = {
   children: React.ReactNode;
-}
+};
