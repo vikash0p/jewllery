@@ -41,7 +41,7 @@ const CartShopping = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {state.cart.map((item: addItemPayload) => (
+                  {state.cart.slice().reverse().map((item: addItemPayload) => (
                     <tr key={item.id}>
                       <td className="py-4">
                         <div className="flex flex-col  gap-2">
@@ -61,7 +61,12 @@ const CartShopping = () => {
                         <div className="flex items-center">
                           <button
                             className="border rounded-md py-2 px-4 mr-2"
-                            onClick={() => dispatch({ type: "DECREMENT_QTY",payload:item.size })}
+                            onClick={() =>
+                              dispatch({
+                                type: "DECREMENT_QTY",
+                                payload: item.size,
+                              })
+                            }
                           >
                             <GrSubtract />
                           </button>
