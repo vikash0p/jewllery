@@ -9,8 +9,8 @@ const SecondProductCard = ({ value }: { value: JewelleryItem }) => {
   const discountedPrice = value.price - value.price * (20 / 100);
   return (
     <div key={value._id} className="flex flex-col items-center justify-center">
-      <Link href={`/collection/${value._id}`}>
-        <div className="relative w-56 h-64">
+      <Link href={`/collection/${value._id}`} className="w-full">
+        <div className="relative max-w-sm md:w-56 h-64">
           <ImageContainer
             src={value.imageUrl}
             className="object-cover w-full h-full"

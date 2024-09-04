@@ -38,10 +38,10 @@ const TopSellingProduct = () => {
       <div className="py-10">
         <SubHeading sub="Top Selling Products" />
       </div>
-      <div className="space-x-10 text-center">
+      <div className="flex flex-wrap justify-center items-center gap-5">
         <button
           className={`bg-primary px-5 py-2 ${
-            index === 0 ? "bg-hoverColor  font-semibold" : ""
+            index === 0 ? "bg-hoverColor  font-semibold" : "bg-primary"
           }`}
           onClick={() => {
             setFilter("new");
@@ -52,7 +52,7 @@ const TopSellingProduct = () => {
         </button>
         <button
           className={`bg-primary px-5 py-2 ${
-            index === 1 ? "bg-hoverColor  font-semibold" : ""
+            index === 1 ? "bg-hoverColor  font-semibold" : "bg-primary"
           }`}
           onClick={() => {
             setFilter("featured");
@@ -63,7 +63,7 @@ const TopSellingProduct = () => {
         </button>
         <button
           className={`bg-primary px-5 py-2 ${
-            index === 2 ? "bg-hoverColor  font-semibold " : ""
+            index === 2 ? "bg-hoverColor  font-semibold " : "bg-primary"
           }`}
           onClick={() => {
             setFilter("best");
@@ -74,13 +74,13 @@ const TopSellingProduct = () => {
         </button>
       </div>
       {isLoading ? (
-        <div className="container grid grid-cols-1 py-16 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-y-10">
+        <div className="container grid grid-cols-1 py-16 m-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-y-10">
           {Array.from({ length: 10 }).map((_, index) => (
             <LoadingSkeletoTopSellingProduct key={index} />
           ))}
         </div>
       ) : (
-        <div className="container grid grid-cols-1 py-16 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-y-10">
+        <div className="container grid grid-cols-1 py-16 m-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-y-10 gap-x-5 ">
           {displayProducts}
         </div>
       )}
@@ -89,7 +89,8 @@ const TopSellingProduct = () => {
           href={"/collection"}
           className="px-8 py-3 font-semibold text-center bg-primary "
         >
-          Explore product        </Link>
+          Explore product{" "}
+        </Link>
       </div>
     </div>
   );
