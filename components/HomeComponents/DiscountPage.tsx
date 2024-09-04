@@ -6,7 +6,7 @@ import { ImageContainer, LinkContainer } from "../reusableComponents";
 
 const DiscountPage: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 gap-4 py-16 m-auto max-w-7xl md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 py-16 m-auto max-w-7xl lg:grid-cols-2">
       {banners.map((banner, index) => (
         <div key={index} className="relative h-[250px]">
           <ImageContainer
@@ -16,9 +16,9 @@ const DiscountPage: React.FC = () => {
             className="object-cover w-full h-full"
           />
 
-          <div className="absolute left-[55%] top-[20%] space-y-2">
+          <div className="absolute left-[35%] md:left-[55%] top-[40%] md:top-[20%] space-y-2">
             <p className="text-base text-gray-600">{banner.discountText}</p>
-            <h4 className="text-2xl font-bold">{banner.title}</h4>
+            <h4 className="text-lg md:text-2xl font-bold">{banner.title}</h4>
             <LinkContainer
               href={banner.linkUrl}
               linkName={banner.linkText}
