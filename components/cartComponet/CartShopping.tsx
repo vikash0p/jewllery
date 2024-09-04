@@ -15,7 +15,7 @@ const CartShopping = () => {
 
   if (state.cart.length === 0) {
     return (
-      <div className="centerdiv text-4xl font-bold flex-col gap-8">
+      <div className="centerdiv text-2xl font-bold flex-col gap-8">
         <h5>Your cart is empty</h5>
 <Link href={"/collection"} className="px-8 py-2 bg-primary">Collection</Link>
       </div>
@@ -89,7 +89,7 @@ const CartShopping = () => {
                           type="button"
                           className="text-red-600"
                           onClick={() => {
-                            dispatch({ type: "REMOVE_ITEM", payload: item.id });
+                            dispatch({ type: "REMOVE_ITEM", payload: item });
                             toastSuccess("successfully remove item");
                           }}
                         >

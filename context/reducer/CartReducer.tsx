@@ -27,11 +27,14 @@ const CartReducer = (state: CartState, action: CartAction): CartState => {
     }
 
     case "REMOVE_ITEM": {
-      return {
-        ...state,
-        cart: cart.filter((item) => item.id !== action.payload),
-      };
-    }
+  return {
+    ...state,
+    cart: state.cart.filter(
+      (item) => !(item.id === action.payload.id && item.size === action.payload.size)
+    ),
+  };
+}
+
 
     case "INCREMENT_QTY": {
       return {
@@ -54,7 +57,7 @@ const CartReducer = (state: CartState, action: CartAction): CartState => {
         ),
       };
     }
-   
+
 
     default:
       return state;

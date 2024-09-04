@@ -21,10 +21,10 @@ export type CartState = {
 // Define action types
 export type CartAction =
   | { type: "ADD_ITEM"; payload: addItemPayload }
-  | { type: "REMOVE_ITEM"; payload: string }
+  | { type: "REMOVE_ITEM"; payload: addItemPayload }
   | { type: "INCREMENT_QTY"; payload: string }
   | { type: "DECREMENT_QTY"; payload: string }
-  | {type:'INITIALIZE_CART'; payload:addItemPayload[]};
+  | { type: "INITIALIZE_CART"; payload: addItemPayload[] };
 
 // Define the context type
 export type CartContextType = {
