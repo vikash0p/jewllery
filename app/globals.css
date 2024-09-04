@@ -30,6 +30,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --swiper-theme-color: #ea580c !important;
   }
 
   .dark {
@@ -64,7 +65,7 @@
 .centerdiv{
   @apply flex justify-center items-center w-full min-h-screen
 }
-  /* ... */
+
 }
 
 /* HTML: <div class="loader"></div> */
@@ -85,8 +86,28 @@
   100% {clip-path: polygon(50% 50%,75% 0   ,25% 0   ,0   50% ,25% 100%,75% 100%,100% 50%,75%  0  )}
 }
 
-.swiper-button-prev, .swiper-button-next{
-  color: #ea580c !important;
+/* Pagination visible on small screens, hidden on large screens */
+.swiper-pagination {
+  display: block !important;
+}
+
+@media (min-width: 1024px) { /* Large screens and above */
+  .swiper-pagination {
+    display: none !important;
+  }
+}
+
+/* Navigation hidden on small screens, visible on large screens */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+
+@media (min-width: 1024px) { /* Large screens and above */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block !important;
+  }
 }
 
 .discountMiddlePageBackgroundImage{
