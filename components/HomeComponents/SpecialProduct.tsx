@@ -5,7 +5,7 @@ import LoadingSkeletoTopSellingProduct from "../loadingdata/LoadingSkeletoTopSel
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { Navigation , Pagination} from "swiper/modules";
 import SubHeading from "../reusableComponents/SubHeading";
 import { useGlobalJewelleryContext } from "@/context/JewelleryProvider";
 
@@ -38,10 +38,17 @@ const SpecialProduct: React.FC = () => {
         <div className="container m-auto">
           <Swiper
             navigation={true}
-            modules={[Navigation]}
+            spaceBetween={20}
+            modules={[Navigation , Pagination]}
+            pagination={{
+              dynamicBullets:true,
+              clickable:true,
+
+            }}
             breakpoints={{
               640: {
                 slidesPerView: 2,
+
               },
               768: {
                 slidesPerView: 3,

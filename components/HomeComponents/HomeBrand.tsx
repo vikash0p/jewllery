@@ -5,7 +5,7 @@ import { ImageContainer } from "../reusableComponents";
 
 const HomeBrand = () => {
   return (
-    <div className="container grid items-center grid-cols-1 py-10 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 ">
+    <div className="container grid items-center grid-cols-2 py-10 m-auto md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-5 ">
       {brandData.map((value) => {
         return (
           <div className="relative h-32 max-w-sm" key={value.id}>

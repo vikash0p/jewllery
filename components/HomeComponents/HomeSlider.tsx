@@ -12,6 +12,7 @@ import { ImageContainer, LinkContainer } from "../reusableComponents";
 export default function HomeSlider() {
   return (
     <Swiper
+    spaceBetween={20}
       navigation={{
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -19,6 +20,7 @@ export default function HomeSlider() {
       pagination={{
         clickable: true,
         el: ".swiper-pagination",
+        dynamicBullets: true,
       }}
       modules={[Navigation, Pagination]}
       className="mySwiper"

@@ -14,7 +14,9 @@ export default function SwiperTestimonialHome() {
       <Swiper
         cssMode={true}
         navigation={true}
-        pagination={true}
+        pagination={{
+          dynamicBullets:true,
+        }}
         mousewheel={true}
         keyboard={true}
 
@@ -24,10 +26,10 @@ export default function SwiperTestimonialHome() {
         {
             testimonialsData.map((value)=>{
                 return(
-                    <SwiperSlide key={value.id} className="w-full px-12" >
+                    <SwiperSlide key={value.id} className="w-full md:px-12" >
                          <div className="space-y-5">
                             <div>
-                                 <h2 className="font-semibold lg:text-2xl" >{value.testimonial} </h2>
+                                 <h2 className="font-semibold md:text-2xl" >{value.testimonial} </h2>
                           <Review star={5} />
                             </div>
 
