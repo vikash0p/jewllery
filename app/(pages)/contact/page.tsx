@@ -3,11 +3,11 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Elegant Jewelry",
+  title: "Contact Us ",
   description:
     "Get in touch with us for any inquiries or support related to our jewelry collections.",
   openGraph: {
-    title: "Contact Us | Elegant Jewelry",
+    title: "Contact Us ",
     description:
       "Get in touch with us for any inquiries or support related to our jewelry collections.",
     url: "https://jewllery-eight.vercel.app/contact",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us | Elegant Jewelry",
+    title: "Contact Us ",
     description:
       "Reach out to us for any assistance or questions you may have.",
     images: "/icon-512x512.png",

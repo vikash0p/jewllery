@@ -35,19 +35,19 @@ const CollectionFilterData: React.FC = () => {
 
       </div>
       <div>
-        <Suspense fallback={<div>Loading...</div>}>
+
           <CollectionRating />
-        </Suspense>
+        
       </div>
       <div>
-        <Suspense fallback={<div>Loading...</div>}>
+
           <CollectionPriceFilter />
-        </Suspense>
+        
       </div>
       <div>
-        <Suspense fallback={<div>Loading...</div>}>
+
           <CollectionClearFilter />
-        </Suspense>
+        
       </div>
     </div>
   );

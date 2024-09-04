@@ -3,7 +3,7 @@ import React from 'react'
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Collection | Elegant Jewelry",
+  title: "Collection ",
   description:
     "Browse through our exclusive collection of fine jewelry pieces designed to dazzle and inspire.",
   openGraph: {

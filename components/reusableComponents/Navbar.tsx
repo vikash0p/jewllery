@@ -4,9 +4,10 @@ import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Search, UserRound, ShoppingCart } from "lucide-react";
 import { useGlobalCartContext } from "@/context/Global/GlobalCartContext";
+useRouter
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
    const pathname = usePathname();
@@ -91,7 +92,8 @@ const Navbar = () => {
              <Link href={"/collection"} className="hover:text-primary">  <Search size={25} /></Link>
             </div>
             <div className="">
-              <UserRound size={25} />
+              <Link href={'/register'} className="hover:text-primary "><UserRound size={25} />
+</Link>
             </div>
             <div className="">
               <Link href="/cart" className="relative flex items-center hover:text-primary">
