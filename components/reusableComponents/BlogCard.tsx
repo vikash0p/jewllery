@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
-const BlogCard = ({ value }: { value: BlogPost }) => {
+const BlogCard = ({ value,index }: { value: BlogPost, index:number }) => {
   const router = useRouter();
     const pathname = usePathname();
     // console.log("🚀 ~ file: BlogCard.tsx:12 ~ pathname:", pathname);
@@ -14,7 +14,7 @@ const BlogCard = ({ value }: { value: BlogPost }) => {
     const Links=pathname === '/blog' || '/' ? (`/blog/${value.blogId}`) :  (`${value.blogId}`)
   return (
     <div key={value.blogId}>
-      <div className="relative max-w-sm md:max-w-md h-96 md:h-[450px]">
+      <div className="relative w-72 h-80 md:w-96 md:h-96 lg:max-w-md lg:h-[450px]">
         <Image
           src={value.image}
           alt={value.title}
@@ -28,11 +28,14 @@ const BlogCard = ({ value }: { value: BlogPost }) => {
           {value.date}
         </div>
       </div>
-      <div className="py-5">
+      <div className={`py-5 bg-white odd:bg-orange-400 ${index % 2===0 ? "bg-white" : "bg-orange-400 lg:bg-white"}`}>
         <h2 className="text-xl">{value.title}</h2>
         <p className="text-gray-600">{value.summary}</p>
 
-        <Link href={Links} className=" hover:text-orange-600 transition-colors underline">
+        <Link
+          href={Links}
+          className=" hover:text-orange-600 transition-colors underline"
+        >
           Read the full article
         </Link>
       </div>

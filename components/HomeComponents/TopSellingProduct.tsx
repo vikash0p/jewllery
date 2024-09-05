@@ -35,12 +35,12 @@ const TopSellingProduct = () => {
 
   return (
     <div>
-      <div className="py-10">
+      <div className="py-2 md:py-5 lg:py-10">
         <SubHeading sub="Top Selling Products" />
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-5">
+      <div className="flex flex-wrap justify-center items-center gap-2 md:gap-5">
         <button
-          className={`bg-primary px-5 py-2 ${
+          className={`bg-primary px-2 text-sm md:text-lg md:px-5 py-2 ${
             index === 0 ? "bg-hoverColor  font-semibold" : "bg-primary"
           }`}
           onClick={() => {
@@ -51,7 +51,7 @@ const TopSellingProduct = () => {
           New Arrival
         </button>
         <button
-          className={`bg-primary px-5 py-2 ${
+          className={`bg-primary px-2 text-sm md:text-lg md:px-5 py-2 ${
             index === 1 ? "bg-hoverColor  font-semibold" : "bg-primary"
           }`}
           onClick={() => {
@@ -62,7 +62,7 @@ const TopSellingProduct = () => {
           Featured Product
         </button>
         <button
-          className={`bg-primary px-5 py-2 ${
+          className={`bg-primary px-2 text-sm md:text-lg md:px-5 py-2 ${
             index === 2 ? "bg-hoverColor  font-semibold " : "bg-primary"
           }`}
           onClick={() => {
@@ -74,13 +74,13 @@ const TopSellingProduct = () => {
         </button>
       </div>
       {isLoading ? (
-        <div className="container grid grid-cols-1 py-16 m-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-y-10">
+        <div className="container grid grid-cols-2 py-16 m-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-y-10">
           {Array.from({ length: 10 }).map((_, index) => (
             <LoadingSkeletoTopSellingProduct key={index} />
           ))}
         </div>
       ) : (
-        <div className="container grid grid-cols-1 py-16 m-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-y-10 gap-x-5 ">
+        <div className="container grid grid-cols-2 py-4 md:py-8 lg:py-16 m-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-y-8 gap-y-4 lg:gap-y-10 gap-x-2 md:gap-x-5 ">
           {displayProducts}
         </div>
       )}
