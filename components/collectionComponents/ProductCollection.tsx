@@ -47,7 +47,7 @@ const ProductCollection = () => {
             {data?.totalItems} Total Products
           </h5>
         </div>
-        <div className="w-full  lg:w-3/4 flex flex-row md:gap-2 px-0 justify-between  items-center  py-3  md:py-0 lg:px-10 border-2 border-red-800 bg-green-600 ">
+        <div className="lg:w-3/4 flex flex-row gap-1 items-center pt-5 lg:justify-between lg:gap-5 ">
           <div className="lg:hidden">
             <SideBar />
           </div>

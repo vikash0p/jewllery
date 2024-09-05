@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className='overflow-hidden px-4 border-2 border-red-700'>
+    <div className=''>
         <ProductCollection />
     </div>
   )

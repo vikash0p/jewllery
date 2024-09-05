@@ -2,11 +2,11 @@
 
 import { useGlobalFilterDataContext } from "@/context/JewelleryFilterDataProvider";
 
-const CollectionSearchBar:React.FC = () => {
-  const {filters:{searchBar},handleSearch}=useGlobalFilterDataContext();
-
-
-
+const CollectionSearchBar: React.FC = () => {
+  const {
+    filters: { searchBar },
+    handleSearch,
+  } = useGlobalFilterDataContext();
 
   return (
     <form
@@ -14,6 +14,7 @@ const CollectionSearchBar:React.FC = () => {
         event.preventDefault()
       }
       aria-label="Search for jewellery products"
+      className="flex flex-col sm:flex-row items-center"
     >
       <label htmlFor="searchBar" className="sr-only">
         Search Jewellery Products
@@ -22,7 +23,7 @@ const CollectionSearchBar:React.FC = () => {
         type="text"
         name="searchBar"
         id="searchBar"
-        className="border border-orange-500 px-3 w-64  md:min-w-[450px] py-2   focus:outline-none focus:ring-2 focus:ring-orange-500"
+        className=" px-3 border border-primary  py-2 w-full sm:w-52 md:min-w-[450px] mb-2 sm:mb-0 focus:outline-none focus:ring-2 focus:ring-orange-500"
         placeholder="Search Jewellery..."
         value={searchBar}
         onChange={handleSearch}
@@ -30,7 +31,8 @@ const CollectionSearchBar:React.FC = () => {
       />
       <button
         type="submit"
-        className="ml-2 bg-primary text-white py-2 px-4 rounded hover:bg-hoverColor focus:outline-none focus:ring-2 focus:ring-orange-500 sr-only"
+
+        className="bg-primary sr-only text-white py-2 px-4 rounded hover:bg-hoverColor focus:outline-none focus:ring-2 focus:ring-orange-500 sm:ml-2"
       >
         Search
       </button>
