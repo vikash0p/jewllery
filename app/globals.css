@@ -60,7 +60,9 @@
     --chart-5: 340 75% 55%;
   }
 }
-
+*{
+  overflow-x: hidden !important;
+}
 @layer components {
 .centerdiv{
   @apply flex justify-center items-center w-full min-h-screen
