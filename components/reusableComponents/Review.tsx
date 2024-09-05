@@ -20,7 +20,7 @@ const Review = ({ star }: { star: number }) => {
     }
   });
 
-  return <div className="flex">{ratingStar}</div>;
+  return <div className="flex gap-0">{ratingStar}</div>;
 };
 
 export default Review;

@@ -12,6 +12,7 @@ import { useGlobalFilterDataContext } from "@/context/JewelleryFilterDataProvide
 import ListViewCard from "./ListViewCard";
 import ListViewCardSkeleton from "../loadingdata/ListViewCardSkeleton";
 import CollectionFilterData from "./CollectionFilterData";
+import { SideBar } from "../reusableComponents/SideBar";
 
 const ProductCollection = () => {
   const { isLoading, isError, data, error } =
@@ -40,12 +41,17 @@ const ProductCollection = () => {
 
   return (
     <div className="">
-      <div className="container m-auto  py-10 flex ">
-        <div className="basis-1/4">
-          <h5 className="font-semibold">{data?.totalItems} Total Products</h5>
+      <div className="container m-auto py-2 px-2 md:px-10 md:py-10 flex flex-col lg:flex-row  w-full ">
+        <div className="w-full lg:w-1/4">
+          <h5 className="font-semibold hidden lg:block ">
+            {data?.totalItems} Total Products
+          </h5>
         </div>
-        <div className="basis-3/4 flex flex-row gap-2 justify-between items-start px-10">
-          <div className="flex gap-4 cursor-pointer">
+        <div className="w-full  lg:w-3/4 flex flex-row md:gap-2 px-0 justify-between  items-center  py-3  md:py-0 lg:px-10  ">
+          <div className="lg:hidden">
+            <SideBar />
+          </div>
+          <div className=" gap-4 cursor-pointer hidden lg:flex">
             <IoGridSharp
               size={30}
               className={`text-orange-400 ${
@@ -64,15 +70,15 @@ const ProductCollection = () => {
           <div className="">
             <CollectionSearchBar />
           </div>
-          <div className="">
+          <div className="hidden lg:block">
             <CollectionDropDwonMenu />
           </div>
         </div>
       </div>
       {/*all product  */}
-      <div className="container m-auto flex flex-row h-full py-10">
-        <div className="basis-1/4   min-h-screen ">
-        <CollectionFilterData />
+      <div className="w-full md:container m-auto flex flex-col lg:flex-row h-full py-10">
+        <div className="basis-1/4   min-h-screen hidden lg:block ">
+          <CollectionFilterData />
         </div>
         <div className="basis-3/4">
           {/* Grid view */}
@@ -84,7 +90,7 @@ const ProductCollection = () => {
                 <div>
                   {filter_Products && filter_Products.length > 0 ? (
                     <div>
-                      <div className="container grid grid-cols-1 gap-5 pb-10 m-auto md:grid-cols-2 lg:grid-cols-3">
+                      <div className="w-full md:container grid grid-cols-2 md:gap-5 pb-10 md:m-auto md:grid-cols-2 lg:grid-cols-3 ">
                         {filter_Products?.map((value: JewelleryItem) => (
                           <ProductCard value={value} key={value._id} />
                         ))}
