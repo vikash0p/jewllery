@@ -20,7 +20,7 @@ const SingleCollectionComponent: React.FC<SingleCollectionComponentProps> = ({id
 
   const [productSize,setProductSize]=useState<string>("");
 
-  console.log("🚀 ~ file: SingleCollectionComponent.tsx:19 ~ productSize:", productSize);
+  // console.log("🚀 ~ file: SingleCollectionComponent.tsx:19 ~ productSize:", productSize);
 
   const cartHandler=(data:JewelleryItem)=>{
     if (productSize === "") {

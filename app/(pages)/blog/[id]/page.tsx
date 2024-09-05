@@ -57,8 +57,8 @@ const SingleBlog = ({ params }: { params: { id: string } }) => {
       </div>
       <div>
         <div className="container grid grid-cols-1 gap-10 py-10 m-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
-          {randomizedPosts.slice(0, 4).map((value) => {
-            return <BlogCard value={value} key={value.blogId} />;
+          {randomizedPosts.slice(0, 4).map((value,index) => {
+            return <BlogCard value={value} index={index} key={value.blogId} />;
           })}
         </div>
       </div>

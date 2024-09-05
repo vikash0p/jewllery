@@ -9,7 +9,7 @@ import { useGlobalJewelleryContext } from "@/context/JewelleryProvider";
 
 const FilterByCategory = () => {
   const { data, error, isError, isLoading } = useGlobalJewelleryContext();
-  console.log("🚀 ~ file: FilterByCategory.tsx:12 ~ data:", data?.totalItems);
+  // console.log("🚀 ~ file: FilterByCategory.tsx:12 ~ data:", data?.totalItems);
 
   // Extract unique categories
   const uniqueCategories = Array.from(
