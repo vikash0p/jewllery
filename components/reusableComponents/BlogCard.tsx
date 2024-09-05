@@ -1,46 +1,57 @@
-'use client';
-import React from 'react';
-import { BlogPost } from '@/utils/interface';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
+"use client";
+import React from "react";
+import { BlogPost } from "@/utils/interface";
+import Link from "next/link";
+import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 
-const BlogCard = ({ value,index }: { value: BlogPost, index:number }) => {
+const BlogCard = ({ value, index }: { value: BlogPost; index: number }) => {
   const router = useRouter();
-    const pathname = usePathname();
-    // console.log("🚀 ~ file: BlogCard.tsx:12 ~ pathname:", pathname);
+  const pathname = usePathname();
 
-    const Links=pathname === '/blog' || '/' ? (`/blog/${value.blogId}`) :  (`${value.blogId}`)
+  const Links =
+    pathname === "/blog" || pathname === "/"
+      ? `/blog/${value.blogId}`
+      : `/${value.blogId}`;
+
   return (
-    <div key={value.blogId}>
-      <div className="relative w-72 h-80 md:w-96 md:h-96 lg:max-w-md lg:h-[450px]">
+    <div
+      key={value.blogId}
+      className="rounded-lg overflow-hidden shadow-lg   transition-all w-full hover:shadow-xl"
+    >
+      <div className="relative w-full  h-72 sm:h-80 md:h-96 lg:h-[450px]">
         <Image
           src={value.image}
           alt={value.title}
           fill
-          className="object-cover object-center w-full h-full transition-transform cursor-pointer hover:scale-110"
+          className="object-cover object-center w-full h-full transition-transform duration-300 ease-in-out transform hover:scale-105"
           priority
           sizes="(min-width: 1480px) 419px, (min-width: 1040px) 28.57vw, (min-width: 780px) calc(45.83vw - 20px), (min-width: 480px) 384px, calc(92.5vw - 42px)"
         />
-
-        <div className="absolute px-3 py-1  bg-hoverColor top-5 left-2">
+        <div className="absolute top-4 left-4 bg-hoverColor px-3 py-1 text-xs sm:text-sm md:text-base rounded-lg text-white shadow-sm">
           {value.date}
         </div>
       </div>
-      <div className={`py-5 bg-white odd:bg-orange-400 ${index % 2===0 ? "bg-white" : "bg-orange-400 lg:bg-white"}`}>
-        <h2 className="text-xl">{value.title}</h2>
-        <p className="text-gray-600">{value.summary}</p>
 
-        <Link
-          href={Links}
-          className=" hover:text-orange-600 transition-colors underline"
-        >
-          Read the full article
+      <div
+        className={`p-4 ${
+          index % 2 === 0 ? "bg-white" : "bg-orange-400 lg:bg-white"
+        }`}
+      >
+        <h2 className="text-lg md:text-xl lg:text-2xl font-semibold mb-2 text-gray-900">
+          {value.title}
+        </h2>
+        <p className="text-gray-700 text-sm md:text-base lg:text-lg mb-4">
+          {value.summary}
+        </p>
+        <Link href={Links}>
+          <span className="text-orange-600 hover:text-orange-700 transition-colors underline text-sm md:text-base lg:text-lg">
+            Read the full article
+          </span>
         </Link>
       </div>
     </div>
   );
-}
+};
 
 export default BlogCard;

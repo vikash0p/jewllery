@@ -9,7 +9,7 @@ import { blogPosts } from "@/utils/data";
 import { BlogPost } from "@/utils/interface";
 export default function BlogEffectCard() {
   return (
-    <div className="w-80 px-2 md:w-3/4 lg:w-1/3 md:mx-auto">
+    <div className="w-[90%] md:w-3/4 m-auto  ">
       <Swiper
         effect={"cards"}
         grabCursor={true}
