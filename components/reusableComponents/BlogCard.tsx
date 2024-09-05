@@ -38,14 +38,28 @@ const BlogCard = ({ value, index }: { value: BlogPost; index: number }) => {
           index % 2 === 0 ? "bg-white" : "bg-orange-400 lg:bg-white"
         }`}
       >
-        <h2 className="text-lg md:text-xl lg:text-2xl font-semibold mb-2 text-gray-900">
+        <h2
+          className={`text-lg md:text-xl lg:text-2xl font-semibold mb-2 text-gray-900  ${
+            index % 2 === 0 ? "" : "text-white lg:text-black"
+          }`}
+        >
           {value.title}
         </h2>
-        <p className="text-gray-700 text-sm md:text-base lg:text-lg mb-4">
+        <p
+          className={`text-gray-700 text-sm md:text-base lg:text-lg mb-4 ${
+            index % 2 === 0 ? "" : "text-white lg:text-black"
+          }`}
+        >
           {value.summary}
         </p>
         <Link href={Links}>
-          <span className="text-orange-600 hover:text-orange-700 transition-colors underline text-sm md:text-base lg:text-lg">
+          <span
+            className={` transition-colors underline text-sm md:text-base lg:text-lg ${
+              index % 2 === 0
+                ? "text-orange-600 hover:text-orange-700"
+                : "text-black lg:text-orange-600 hover:text-white"
+            } `}
+          >
             Read the full article
           </span>
         </Link>
