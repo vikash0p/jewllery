@@ -33,7 +33,7 @@ const AboutAccordion = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger>100% Organic Foods</AccordionTrigger>
+          <AccordionTrigger>100% Pure Element</AccordionTrigger>
           <AccordionContent>
             Our commitment to purity extends beyond jewelry to our selection of
             organic foods. We provide 100% organic, sustainably sourced
