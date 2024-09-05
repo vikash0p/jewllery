@@ -40,7 +40,7 @@ const ProductCollection = () => {
   const totalPages = data?.totalPages || 1;
 
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <div className="container m-auto py-2 px-2 md:px-10 md:py-10 flex flex-col lg:flex-row  w-full ">
         <div className="w-full lg:w-1/4">
           <h5 className="font-semibold hidden lg:block ">

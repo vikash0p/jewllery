@@ -27,6 +27,20 @@ export function PaginationCollectionpage() {
   if (!data) return null;
 
   const totalPages = data.totalPages || 1;
+  const maxVisiblePages = 3;
+
+  // Calculate the range of page numbers to display
+  let startPage = Math.max(1, page - Math.floor(maxVisiblePages / 2));
+  let endPage = Math.min(totalPages, page + Math.floor(maxVisiblePages / 2));
+
+  // Adjust the start and end page if there are fewer than maxVisiblePages
+  if (endPage - startPage + 1 < maxVisiblePages) {
+    if (startPage === 1) {
+      endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+    } else if (endPage === totalPages) {
+      startPage = Math.max(1, endPage - maxVisiblePages + 1);
+    }
+  }
 
   const handlePreviousPage = () => {
     if (page > 1) {
@@ -58,24 +72,27 @@ export function PaginationCollectionpage() {
           />
         </PaginationItem>
 
-        {Array.from({ length: totalPages }).map((_, i) => (
-          <PaginationItem key={i}>
-            <PaginationLink
-              href={`/collection?page=${i + 1}`}
-              className={`cursor-pointer ${
-                page === i + 1 ? "bg-primary" : ""
-              }`}
-              onClick={() => {
-                setPage(i + 1);
-                router.push(`/collection?page=${i + 1}`);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              isActive={page === i + 1}
-            >
-              {i + 1}
-            </PaginationLink>
-          </PaginationItem>
-        ))}
+        {Array.from({ length: endPage - startPage + 1 }).map((_, i) => {
+          const pageNumber = startPage + i;
+          return (
+            <PaginationItem key={pageNumber}>
+              <PaginationLink
+                href={`/collection?page=${pageNumber}`}
+                className={`cursor-pointer ${
+                  page === pageNumber ? "bg-primary" : ""
+                }`}
+                onClick={() => {
+                  setPage(pageNumber);
+                  router.push(`/collection?page=${pageNumber}`);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                isActive={page === pageNumber}
+              >
+                {pageNumber}
+              </PaginationLink>
+            </PaginationItem>
+          );
+        })}
 
         <PaginationItem>
           <PaginationNext
