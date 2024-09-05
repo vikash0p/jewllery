@@ -22,7 +22,7 @@ const CollectionSearchBar:React.FC = () => {
         type="text"
         name="searchBar"
         id="searchBar"
-        className="border border-orange-500 px-3 w-72  md:min-w-[450px] py-2  focus:outline-none focus:ring-2 focus:ring-orange-500"
+        className="border border-orange-500 px-3 w-64  md:min-w-[450px] py-2   focus:outline-none focus:ring-2 focus:ring-orange-500"
         placeholder="Search Jewellery..."
         value={searchBar}
         onChange={handleSearch}
