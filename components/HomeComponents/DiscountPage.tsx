@@ -8,7 +8,7 @@ const DiscountPage: React.FC = () => {
   return (
     <div className="grid grid-cols-1 gap-4 py-16 m-auto max-w-7xl lg:grid-cols-2">
       {banners.map((banner, index) => (
-        <div key={index} className="relative h-[250px]">
+        <div key={index} className={`relative h-[250px] ${index %2===0 ? " hidden lg:block":""} `}>
           <ImageContainer
             src={banner.src}
             alt={banner.alt}
@@ -24,7 +24,6 @@ const DiscountPage: React.FC = () => {
               linkName={banner.linkText}
               className="inline-block px-6 py-2 text-sm transition-colors bg-primary  hover:bg-primary"
             />
-
           </div>
         </div>
       ))}

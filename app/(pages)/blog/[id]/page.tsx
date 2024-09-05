@@ -28,7 +28,7 @@ const SingleBlog = ({ params }: { params: { id: string } }) => {
                 <div className="flex flex-col">
                   <div className="py-8 bg-gray-100">
                     <div className="container px-4 mx-auto">
-                      <h1 className="mb-2 text-4xl font-bold text-gray-800">
+                      <h1 className="mb-2 text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800">
                         {blogdata.title}
                       </h1>
                       <p className="text-gray-600">
@@ -37,13 +37,13 @@ const SingleBlog = ({ params }: { params: { id: string } }) => {
                     </div>
                   </div>
                   <div className="py-8 bg-white">
-                    <div className="container flex flex-col px-4 mx-auto md:flex-row">
+                    <div className="container flex flex-col px-4 mx-auto lg:flex-row">
                       <SingleBlogCard
                         blogdata={blogdata}
                         key={blogdata.blogId}
                       />
 
-                      <div className="w-full px-4 md:w-1/4">
+                      <div className="w-full px-4 lg:w-1/4 hidden lg:block">
                         {/* blogLinkscompoents form blogComponets */}
                         <BlogLinksComponent />
                         <BlogCategoryComponent />

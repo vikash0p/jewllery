@@ -57,7 +57,7 @@ const BlogCard = ({ value, index }: { value: BlogPost; index: number }) => {
             className={` transition-colors underline text-sm md:text-base lg:text-lg ${
               index % 2 === 0
                 ? "text-orange-600 hover:text-orange-700"
-                : "text-black lg:text-orange-600 hover:text-white"
+                : "text-black lg:text-orange-600 hover:text-white lg:hover:text-black"
             } `}
           >
             Read the full article
