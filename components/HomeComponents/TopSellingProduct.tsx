@@ -74,7 +74,7 @@ const TopSellingProduct = () => {
         </button>
       </div>
       {isLoading ? (
-        <div className="container grid grid-cols-2 py-16 m-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-y-10">
+        <div className="container grid grid-cols-2 py-4 md:py-8 lg:py-16 m-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-y-8 gap-y-4 lg:gap-y-10 gap-x-2 md:gap-x-5">
           {Array.from({ length: 10 }).map((_, index) => (
             <LoadingSkeletoTopSellingProduct key={index} />
           ))}

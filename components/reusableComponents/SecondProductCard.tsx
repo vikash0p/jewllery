@@ -10,7 +10,7 @@ const SecondProductCard = ({ value }: { value: JewelleryItem }) => {
   return (
     <div key={value._id} className="flex flex-col items-center justify-center">
       <Link href={`/collection/${value._id}`} className="w-full">
-        <div className="relative max-w-sm md:w-56 h-32 md:h-64">
+        <div className="relative max-w-sm md:w-56 h-48 md:h-64">
           <ImageContainer
             src={value.imageUrl}
             className="object-cover w-full h-full"
